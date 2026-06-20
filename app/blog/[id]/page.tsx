@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: `${post.title} | دليل عروض وباقات زين السعودية`,
     description: `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`,
-    keywords: [post.title, post.title.split(' ').join(', '), 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'الرياض'],
+    keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...post.title.split(' ').filter(w => w.length > 3)],
     openGraph: {
       title: `${post.title} | عروض 5G وألياف زين`,
       description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
@@ -141,16 +141,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                     </summary>
                     
                     <div className="pt-6 mt-4 border-t border-gray-200">
-                      <ul className="space-y-4 text-gray-600 font-medium text-[15px]">
-                        <li><a href="#intro" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 1. مقدمة شاملة وتفاصيل العرض</a></li>
-                        <li><a href="#features" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 2. لماذا باقات الإنترنت من زين هي الأفضل؟</a></li>
-                        <li><a href="#fiber-vs-5g" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 3. المقارنة بين 5G والألياف البصرية</a></li>
-                        <li><a href="#gaming-streaming" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 4. تجربة الألعاب (Gaming) والبث المباشر</a></li>
-                        <li><a href="#coverage" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 5. تغطية الشبكة ومناطق الخدمة</a></li>
-                        <li><a href="#how-to-subscribe" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 6. طريقة التأسيس والاشتراك المجاني</a></li>
-                        <li><a href="#router-info" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 7. مواصفات الراوتر (المودم) المرفق</a></li>
-                        <li><a href="#faq" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 8. الأسئلة الشائعة حول الخدمة</a></li>
-                      </ul>
+                      {post.toc ? (
+                        post.toc
+                      ) : (
+                        <ul className="space-y-4 text-gray-600 font-medium text-[15px]">
+                          <li><a href="#intro" className="hover:text-brand-primary transition-colors flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div> 1. مقدمة</a></li>
+                        </ul>
+                      )}
                     </div>
                   </details>
 
@@ -167,143 +164,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               {/* Main Content */}
               <div className="w-full lg:w-2/3">
                 <div className="prose prose-lg px-2 md:px-0 max-w-none text-gray-600 font-medium leading-loose space-y-10">
-                  <section id="intro" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> مقدمة شاملة وتفاصيل العرض
-                    </h2>
-                    <p>
-                      أهلاً بكم في هذه المقالة التفصيلية الشاملة التي تدور حول <strong>{post.title}</strong>. 
-                      إذا كنت تبحث عن إنترنت منزلي قوي ومستقر يلبي كافة احتياجاتك اليومية، فإن شركة زين السعودية تقدم لك أقوى العروض الحصرية لعام 2026. 
-                      سواء كنت في مدينة الرياض أو جدة أو الدمام وغيرها من المدن، فإننا نضمن لك الحصول على تجربة اتصال فريدة من نوعها ومفتوحة وبدون سياسة الاستخدام العادل.
-                    </p>
-                    <p className="mt-4">
-                      إن الاعتماد على الإنترنت في عصرنا الحالي أصبح من الضروريات القصوى، سواء للعمل عن بُعد، أو للتعليم الإلكتروني، أو حتى للترفيه ومشاهدة الأفلام والألعاب الأونلاين. 
-                      وهنا تبرز أهمية اختيار شبكة موثوقة ذات تغطية واسعة وسرعات فائقة. نحن هنا - بصفتنا مندوبين معتمدين لشركة زين - وفرنا لكم خطوات التأسيس المجاني للحصول على إنترنت سريع ومستقر، مدعوماً بأحدث التقنيات مثل شبكات الجيل الخامس 5G وشبكات الألياف البصرية (الفايبر).
-                    </p>
-                    <p className="mt-4">
-                      يمكنك الآن الاستمتاع بباقات إنترنت منزلي لا محدوة، بأسعار تنافسية جداً تبدأ من 289 ريال، 
-                      ومع كل اشتراك ستحصل على <strong className="text-brand-primary">راوتر مجاني وتأسيس مجاني بالكامل</strong>، مما يزيل عنك أي أعباء أو رسوم مخفية أثناء عملية التركيب. ما عليك سوى التواصل عبر رقم الواتساب المخصص أو الاتصال المباشر على 0572587855 لتحديد موعد زيارة الفني.
-                    </p>
-                  </section>
-
-                  <section id="features" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> لماذا باقات الإنترنت من زين هي الأفضل؟
-                    </h2>
-                    <p>
-                      تتربع زين على عرش مزودي خدمة الإنترنت في المملكة العربية السعودية لعدة أسباب جوهرية تجعلها الخيار الأول للعملاء الباحثين عن جودة لا تضاهى:
-                    </p>
-                    <ul className="list-disc list-inside space-y-3 mt-4 pr-4">
-                      <li><strong>إنترنت لامحدود حقيقي:</strong> جميع الباقات المنزلية تأتي بسعة تحميل بيانات لا محدودة دون تطبيق أي قيود أو سياسة استخدام عادل تقيد سرعتك بعد استهلاك معين.</li>
-                      <li><strong>أحدث تقنيات الراوترات:</strong> يمنح العميل راوتر 5G أو مودم ألياف بصرية من أحدث الإصدارات العالمية مجاناً مع التأسيس. تمتاز هذه المودمات ببث شبكات واي فاي (Wi-Fi 6) القوية لمديات أوسع واستقرار أعلى داخل المنزل.</li>
-                      <li><strong>أسعار شفافة وبدون رسوم تأسيس مخفية:</strong> عملية التأسيس ومد الكابلات والبرمجة بالكامل تتم على نفقة الشركة. أنت تدفع فقط قيمة اشتراكك الشهري الموضح والمدون في الباقة.</li>
-                      <li><strong>دعم فني استثنائي:</strong> يقدم الدعم الفني الخاص بشركة زين استجابة سريعة جداً لأي عطل وإصلاحه بأسرع وقت لضمان استمرارية الاتصال.</li>
-                    </ul>
-                    <p className="mt-4">
-                      بالإضافة إلى ذلك، توفر زين مرونة عالية للعملاء؛ فبإمكانك الترقية بين الباقات، وفي حال انتقالك إلى منزل جديد يمكنك بكل سهولة نقل خدمة الفايبر أو نقل راوتر الـ 5G معك دون أي تعقيدات. كل هذه المزايا تساهم في تقديم <em>أرخص انترنت منزلي 5G في السعودية</em> مترافقاً مع أعلى قيمة وأداء.
-                    </p>
-                  </section>
-
-                  <section id="fiber-vs-5g" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> المقارنة بين 5G والألياف البصرية (فايبر)
-                    </h2>
-                    <p>
-                      كثيراً ما يتساءل العملاء الذين يبحثون عن <strong>مندوب زين الياف بصرية الرياض</strong> أو في المدن الأخرى: ما هو الخيار الأمثل لي، هل أطلب الألياف البصرية أم الجيل الخامس 5G؟
-                    </p>
-                    <div className="grid md:grid-cols-2 gap-6 mt-8">
-                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                          <h4 className="font-bold text-xl text-brand-secondary mb-3">شبكات 5G المنزلي</h4>
-                          <p className="text-sm">
-                            السرعة والسهولة في التركيب تميز هذا الخيار. لا توجد حاجة للقيام بأي تمديدات كابلات أو حفريات. بمجرد استلام جهاز الراوتر (المودم 5G)، تقوم بتوصيله بالكهرباء فتبدأ فورا بالاستمتاع بسرعات فائقة. هذا الخيار رائع وسريع للمنازل المستأجرة والمناطق الفاقدة لبوكسيات الفايبر.
-                          </p>
-                       </div>
-                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                          <h4 className="font-bold text-xl text-brand-secondary mb-3">الألياف البصرية (فايبرFiber)</h4>
-                          <p className="text-sm">
-                            تعتبر تقنية الفايبر هي ذروة الاستقرار للإنترنت الأرضي عالمياً، لا تتأثر بالعوامل الجوية أبداً. توفر سرعات تصل إلى 1 جيجا (1000 ميجابت)، وتمتاز بنطاق تأخير (Ping) شبه منعدم. خيار مثالي لهواة الألعاب التنافسية والعائلات الكبيرة جداً التي تمتلك عشرات الأجهزة الذكية المتصلة بآنٍ واحد.
-                          </p>
-                       </div>
-                    </div>
-                  </section>
-
-                  <section id="gaming-streaming" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> تجربة الألعاب (Gaming) والبث المباشر 4K
-                    </h2>
-                    <p>
-                      إذا كنت تبحث عن كلمات مثل <em>عروض نت زين المفتوح للمنازل</em> أو تتسائل عن أداء الباقات بالنسبة لأجهزة الكونسول (بلايستيشن وإكس بوكس) وأجهزة الكمبيوتر الشخصي، فإن الإجابة هي أن زين طورت بنية تحتية جبارة تخدم اللاعبين في المقام الأول.
-                    </p>
-                    <p className="mt-4">
-                      بالنسبة للبث المباشر (مثل منصات نتفليكس، يوتيوب، وديزني+)، فإن الدقة العالية المتمثلة في الـ 4K وأحياناً 8K تتطلب تدفق بيانات ضخم وسريع دون انقطاع. ومن خلال تجربتنا وبناء على أراء الكثير من المشتركين، أثبتت باقات 5G والفايبر من زين قدرتها على تحميل وتشغيل أفلام بدقة الـ 4K على عدة شاشات داخل المنزل في نفس اللحظة بدون ظهور تلك الدائرة المزعجة (دائرة التحميل أو الـ Buffering).
-                    </p>
-                    <p className="mt-4">
-                      السر يكمن في سعة الحزمة اللامحدودة (Bandwidth)، ومعدل الرفع (Upload Speed) الممتاز الذي توفره باقات الفايبر مثل باقة 300 ميجابت، وباقة 500 ميجابت (بريميوم)، والتي يطلبها أيضاً صُناع المحتوى لمنصات البث المباشر مثل تويتش ويوتيوب لضمان بث ألعابهم للمشاهدين بأعلى وضوح وثبات تام للفريمات.
-                    </p>
-                  </section>
-
-                  <section id="coverage" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> تغطية الشبكة ومناطق الخدمة في المملكة
-                    </h2>
-                    <p>
-                      تعمل شركة زين يومياً على توسيع نطاق شبكات الألياف البصرية وشبكات الـ 5G حتى تغطي كافة أنحاء المملكة العربية السعودية بتغطية استثنائية. 
-                      سواء كنت متواجدا في وسط مدينة الرياض حيث الأحياء المكتظة، أو في أطراف المدن والمحافظات المختلفة؛ فإن نسبة كبيرة من المنازل تمتلك <strong>بوكسية ألياف زين</strong> الجاهزة للتفعيل والتوصيل الآني.
-                    </p>
-                    <p className="mt-4">
-                      في حال لم تكن الألياف واصلة إلى منطقتك بعد، فإن المندوب المعتمد (ويمكنك طلبه حالاً على رقم 0572587855) يمكنه تشييك التغطية عن بُعد والتأكد من دعم موقعك لتقنية 5G من زين. هذا الفحص يتم مجاناً ويضمن لك استلام باقة الإنترنت التي تتوافق مع التغطية الممتازة في حيك المعماري.
-                    </p>
-                  </section>
-
-                  <section id="how-to-subscribe" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> طريقة التأسيس والاشتراك المجاني خطوة بخطوة
-                    </h2>
-                    <p>
-                      لتسهيل الأمور على جميع العملاء ومواكبة للرقمية الحديثة، أصبحت عملية طلب وتأسيس <em>النت المنزلي من زين</em> لا تستلزم زيارة الفرع أو الانتظار طويلا. يمكنك إتمام كل شيء وأنت في مكانك من خلال المندوب المختص:
-                    </p>
-                    <ol className="list-decimal list-inside space-y-4 mt-6 bg-brand-gray p-8 rounded-2xl">
-                      <li className="font-bold"><strong>التواصل الفوري:</strong> اتصل برقم التأسيس المباشر 0572587855 أو أرسل رسالة واتساب، وسيقوم المندوب بالرد عليك فورا 24/7.</li>
-                      <li className="font-bold"><strong>التحقق المجاني من التغطية:</strong> سيسألك المندوب عن موقعك بالضبط ليتم استخدام أحدث خرائط أبراج وألياف زين وفحص قوة الإشارة وجودة التقنية المتوفرة لمنزلك.</li>
-                      <li className="font-bold"><strong>اختيار الباقة المناسبة:</strong> ستتلقى كشفاً بأحدث العروض الحالية لعام 2026. ستختار السرعة المناسبة لميزانيتك واحتياجاتك (مثلاً: 289 ريال شهريا لباقة الألياف).</li>
-                      <li className="font-bold"><strong>تحديد موعد الفني:</strong> في نفس اليوم، أو في وقت يناسبك تماماً، سيتوجه فني التركيبات إلى منزلك لتركيب الكابل والمودم، وإجراء اختبار السرعة لتستلم الإنترنت شغالاً بكامل كفاءته.</li>
-                    </ol>
-                  </section>
-
-                  <section id="router-info" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> مواصفات الراوتر (المودم) المجاني المرفق
-                    </h2>
-                    <p>
-                      يعد الراوتر هو القلب النابض لأي شبكة منزلية. زين لم تبخل على عملائها بأحدث التجهيزات، حيث يتم تزويد كل مشترك براوتر مجاني بالكامل بدون أي رسوم إضافية، يتميز بالخصائص التالية:
-                    </p>
-                    <ul className="list-disc list-inside space-y-2 mt-4">
-                      <li>يدعم تقنية Wi-Fi 6 الجديدة كليا والتي تسمح بنقل بيانات مضاعف داخليا مقارنة بالرواترات القديمة.</li>
-                      <li>تعدد الهوائيات الذكية داخليا لضمان عبور إشارة الواي فاي من خلال الجدران الخرسانية للمنازل.</li>
-                      <li>إمكانية اتصال مئات الأجهزة بنفس اللحظة دون هبوط محسوس في الأداء بفضل معالجات الراوتر القوية.</li>
-                      <li>إعداد آمن مشفر من أحدث بروتوكولات الأمان (WPA3) لحماية شبكتك وملفاتك.</li>
-                    </ul>
-                  </section>
-
-                  <section id="faq" className="scroll-mt-24">
-                    <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3">
-                      <span className="text-brand-primary">✦</span> الأسئلة الشائعة حول الخدمة
-                    </h2>
-                    <div className="space-y-6">
-                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                          <h4 className="font-bold text-lg text-brand-primary mb-2">هل فعلا الباقات مفتوحة بدون استخدام عادل؟</h4>
-                          <p className="text-sm">نعم، جميع باقات الإنترنت المنزلي سواء 5G أو الألياف البصرية المذكورة هنا تكون بسعة تحميل مفتوحة ولا محدودة، بدون أي تضييق على السرعة، مهما كان حجم استهلاكك اليومي والشهري.</p>
-                       </div>
-                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                          <h4 className="font-bold text-lg text-brand-primary mb-2">هل يوجد رسوم للتأسيس أو رسوم زيارة للفني؟</h4>
-                          <p className="text-sm">كلا، التأسيس والبرمجة والتمديد وتفعيل المودم كلها مجانية 100%. أنت مطالب فقط بدفع قيمة الاشتراك الشهري بعد التفعيل والتشغيل، حسب الفاتورة الشهرية.</p>
-                       </div>
-                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                          <h4 className="font-bold text-lg text-brand-primary mb-2">كيف أقوم بنقل اشتراكي إذا غيرت مسكني؟</h4>
-                          <p className="text-sm">العملية بسيطة للغاية. إذا كان جهازك 5G فأنت فقط تنقل المودم وتشغله بالكهرباء في البيت الجديد وتتأكد من التغطية. أما إذا كان فايبر فتقوم بتسجيل طلب نقل مكان، وسيقوم المندوب والفني بنقله لبوكسية البيت الجديد.</p>
-                       </div>
-                    </div>
-                  </section>
+                  {post.content ? (
+                    post.content
+                  ) : (
+                    <div className="p-10 text-center">جاري تحديث المحتوى...</div>
+                  )}
 
                   {/* Call to action ending */}
                   <div className="bg-gradient-to-r from-brand-secondary to-gray-900 text-brand-secondary p-10 rounded-2xl text-center shadow-2xl mt-12 mb-8 relative overflow-hidden">
