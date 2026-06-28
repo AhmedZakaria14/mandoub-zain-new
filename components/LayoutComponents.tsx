@@ -64,9 +64,9 @@ export function Header() {
 
           <div className="hidden md:flex gap-8 z-10 flex-1 items-center">
             <Link href="/" className="font-bold hover:text-brand-primary transition-colors text-[15px]">الرئيسية</Link>
-            <a href="/#services" className="font-bold hover:text-brand-primary transition-colors text-[15px]">الخدمات</a>
-            <a href="/#gallery" className="font-bold hover:text-brand-primary transition-colors text-[15px]">أعمال التركيب</a>
-            <a href="/#blog" className="font-bold hover:text-brand-primary transition-colors text-[15px]">المدونة</a>
+            <Link href="/#services" className="font-bold hover:text-brand-primary transition-colors text-[15px]">الخدمات</Link>
+            <Link href="/#gallery" className="font-bold hover:text-brand-primary transition-colors text-[15px]">أعمال التركيب</Link>
+            <Link href="/#blog" className="font-bold hover:text-brand-primary transition-colors text-[15px]">المدونة</Link>
           </div>
 
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
@@ -129,15 +129,15 @@ export function Header() {
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
                 الرئيسية
               </Link>
-              <a href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
+              <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
                 الخدمات
-              </a>
-              <a href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
+              </Link>
+              <Link href="/#gallery" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
                 أعمال التركيب
-              </a>
-              <a href="/#blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
+              </Link>
+              <Link href="/#blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors">
                 المدونة
-              </a>
+              </Link>
               <Link href="/blog/5" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-brand-primary hover:bg-gray-50 font-bold rounded-xl p-4 transition-colors text-brand-primary">
                 عروض التأسيس الحصرية
               </Link>
@@ -218,9 +218,9 @@ export function Footer() {
           <h4 className="text-white font-bold mb-6 text-lg">روابط سريعة</h4>
           <ul className="space-y-4">
             <li><Link href="/" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> الرئيسية</Link></li>
-            <li><a href="/#services" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> الخدمات والباقات</a></li>
-            <li><a href="/#gallery" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> معرض التأسيس</a></li>
-            <li><a href="/#blog" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> المدونة</a></li>
+            <li><Link href="/#services" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> الخدمات والباقات</Link></li>
+            <li><Link href="/#gallery" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> معرض التأسيس</Link></li>
+            <li><Link href="/#blog" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> المدونة</Link></li>
           </ul>
         </div>
         

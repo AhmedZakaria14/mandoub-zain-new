@@ -171,11 +171,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                   )}
 
                   {/* Call to action ending */}
-                  <div className="bg-gradient-to-r from-brand-secondary to-gray-900 text-brand-secondary p-10 rounded-2xl text-center shadow-2xl mt-12 mb-8 relative overflow-hidden">
+                  <div className="bg-gradient-to-r from-brand-secondary to-gray-900 text-white p-10 rounded-2xl text-center shadow-2xl mt-12 mb-8 relative overflow-hidden">
                      <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                      <div className="relative z-10">
                        <h3 className="text-3xl mb-4 font-black">احجز موعد التركيب الآن، العرض لفترة محدودة</h3>
-                       <p className="mb-8 text-gray-600 text-lg">سارع بالحصول على سرعتك القصوى وإنترنت غير محدود من رواد الاتصالات. تواصل معنا اليوم لاستغلال عرض التأسيس المجاني والراوتر المجاني.</p>
+                       <p className="mb-8 text-gray-300 text-lg">سارع بالحصول على سرعتك القصوى وإنترنت غير محدود من رواد الاتصالات. تواصل معنا اليوم لاستغلال عرض التأسيس المجاني والراوتر المجاني.</p>
                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                          <a href="tel:0572587855" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg" dir="ltr">
                            <Phone className="w-6 h-6 text-brand-primary" />
