@@ -12,8 +12,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  const displayPhone = "0572587855";
-  const whatsappPhone = "966572587855";
+  const displayPhone = "0545478583";
+  const whatsappPhone = "966545478583";
 
   const logoSrc = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png";
   const logoAlt = "شعار زين 5G وألياف بصرية";
@@ -190,8 +190,8 @@ export function Header() {
 }
 
 export function Footer() {
-  const displayPhone = "0572587855";
-  const whatsappPhone = "966572587855";
+  const displayPhone = "0545478583";
+  const whatsappPhone = "966545478583";
   const logoSrc = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png";
 
   return (
