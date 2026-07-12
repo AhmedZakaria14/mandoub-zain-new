@@ -235,9 +235,30 @@ export function Footer() {
         </div>
       </div>
       
+      <div className="container mx-auto px-4 mb-12 max-w-7xl">
+        <div className="bg-black/20 p-8 rounded-3xl border border-white/5 text-sm leading-relaxed text-gray-400">
+          <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+            <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
+            تنويه قانوني وإخلاء مسؤولية رسمي:
+          </h4>
+          <p className="mb-4">
+            هذا الموقع عبارة عن منصة تسويقية ترويجية مستقلة ومخصصة لخدمات تمديد وتأسيس خطوط الإنترنت، ويتم تشغيله تحت النطاق الفرعي المرخص <span className="text-brand-primary font-bold">zain5grouter.com</span>. يدار هذا الموقع بشكل مستقل بواسطة مندوب تسويق معتمد ومستقل لتقديم خدمات الوساطة الرقمية.
+          </p>
+          <p>
+            <strong className="text-white">توضيح هام للعامة:</strong> نحن لا نمثل بشكل رسمي أو حصري أي من شركات الاتصالات بمفردها (مثل STC، موبايلي، زين، أو سلام)، ولسنا جزءاً من الهياكل التنظيمية أو الإدارية الداخلية لهذه الشركات. تنحصر خدمتنا ومهامنا في تسهيل معالجة طلبات العملاء الجدد وربطها بالشبكات المتاحة للشركات المزودة للخدمة في المملكة العربية السعودية تحت البنية التحتية المسموح بها نظاماً.
+          </p>
+        </div>
+      </div>
+
       <div className="border-t border-white/10 py-6 text-center text-sm bg-black/20">
         <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} جميع الحقوق محفوظة لخدمات التأسيس.</p>
+          <div className="flex flex-col md:flex-row items-center gap-4 text-gray-400">
+            <p>&copy; {new Date().getFullYear()} جميع الحقوق محفوظة لخدمات التأسيس.</p>
+            <div className="flex gap-4">
+              <Link href="/privacy-policy" className="hover:text-brand-primary transition-colors">سياسة الخصوصية</Link>
+              <Link href="/terms-of-use" className="hover:text-brand-primary transition-colors">شروط الاستخدام</Link>
+            </div>
+          </div>
           
           <div className="flex flex-col items-center gap-1 my-2 md:my-0">
              <span className="text-gray-400 text-xs">تم التصميم والتطوير بواسطة</span>
