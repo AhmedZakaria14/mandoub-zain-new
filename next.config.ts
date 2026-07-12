@@ -26,6 +26,28 @@ const nextConfig: NextConfig = {
     ],
   },
   output: 'standalone',
+  async redirects() {
+    return [
+      {
+        source: '/blog/5',
+        destination: '/#blog',
+        permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+        ],
+      },
+    ];
+  },
   transpilePackages: ['motion'],
   webpack: (config, {dev}) => {
     // HMR is disabled in AI Studio via DISABLE_HMR env var.

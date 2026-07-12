@@ -62,11 +62,11 @@ export function Header() {
             <Menu size={32} />
           </button>
 
-          <div className="hidden md:flex gap-8 z-10 flex-1 items-center">
-            <Link href="/" className="font-bold hover:text-brand-primary transition-colors text-[15px]">الرئيسية</Link>
-            <Link href="/#services" className="font-bold hover:text-brand-primary transition-colors text-[15px]">الخدمات</Link>
-            <Link href="/#gallery" className="font-bold hover:text-brand-primary transition-colors text-[15px]">أعمال التركيب</Link>
-            <Link href="/#blog" className="font-bold hover:text-brand-primary transition-colors text-[15px]">المدونة</Link>
+          <div className="hidden md:flex gap-4 z-10 flex-1 items-center">
+            <Link href="/" className="font-bold hover:text-brand-primary transition-colors text-[15px] p-2">الرئيسية</Link>
+            <Link href="/#services" className="font-bold hover:text-brand-primary transition-colors text-[15px] p-2">الخدمات</Link>
+            <Link href="/#gallery" className="font-bold hover:text-brand-primary transition-colors text-[15px] p-2">أعمال التركيب</Link>
+            <Link href="/#blog" className="font-bold hover:text-brand-primary transition-colors text-[15px] p-2">المدونة</Link>
           </div>
 
           <Link href="/" className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-20">
@@ -217,10 +217,10 @@ export function Footer() {
         <div className="md:col-span-3 md:col-start-7">
           <h4 className="text-white font-bold mb-6 text-lg">روابط سريعة</h4>
           <ul className="space-y-4">
-            <li><Link href="/" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> الرئيسية</Link></li>
-            <li><Link href="/#services" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> الخدمات والباقات</Link></li>
-            <li><Link href="/#gallery" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> معرض التأسيس</Link></li>
-            <li><Link href="/#blog" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start"><span className="text-brand-primary opacity-50">✦</span> المدونة</Link></li>
+            <li><Link href="/" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start p-2"><span className="text-brand-primary opacity-50">✦</span> الرئيسية</Link></li>
+            <li><Link href="/#services" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start p-2"><span className="text-brand-primary opacity-50">✦</span> الخدمات والباقات</Link></li>
+            <li><Link href="/#gallery" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start p-2"><span className="text-brand-primary opacity-50">✦</span> معرض التأسيس</Link></li>
+            <li><Link href="/#blog" className="hover:text-brand-primary transition-colors flex items-center gap-2 justify-center md:justify-start p-2"><span className="text-brand-primary opacity-50">✦</span> المدونة</Link></li>
           </ul>
         </div>
         

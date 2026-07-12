@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
 
 // Generate static parameters for all blog posts
@@ -61,6 +62,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     <div className="flex flex-col min-h-screen bg-brand-gray font-sans text-brand-secondary">
       <Header />
       <main className="flex-grow pt-24 pb-32 relative">
+        <BreadcrumbSchema articleTitle={post.title} articleSlug={post.slug} />
         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-brand-primary/10 to-transparent pointer-events-none"></div>
         <script
           type="application/ld+json"
