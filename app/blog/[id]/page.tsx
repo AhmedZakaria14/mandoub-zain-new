@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
 
 // Generate static parameters for all blog posts
 export async function generateStaticParams() {
@@ -21,6 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return { title: 'الصفحة غير موجودة' };
   }
 
+  const postUrl = `${SITE_URL}/blog/${id}`;
+
   return {
     title: `${post.title} | دليل عروض وباقات زين السعودية`,
     description: `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`,
@@ -29,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       title: `${post.title} | عروض 5G وألياف زين`,
       description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
       type: 'article',
-      url: process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `/blog/${id}`,
+      url: postUrl,
       images: [
         {
           url: post.imageUrl,
@@ -40,7 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       ],
     },
     alternates: {
-      canonical: process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `/blog/${id}`,
+      canonical: postUrl,
     }
   };
 }
@@ -53,9 +56,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     notFound();
   }
 
-  const postUrl = process.env.APP_URL ? `${process.env.APP_URL}/blog/${id}` : `https://example.com/blog/${id}`;
+  const postUrl = `${SITE_URL}/blog/${id}`;
   const isFiber = post.title.includes('ألياف') || post.title.includes('فايبر');
   const is5G = post.title.includes('5G');
+  const defaultDate = "2024-05-01";
 
   // Define specific content for blog 5, and general template for others
   return (
@@ -85,8 +89,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                    "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png`
                 }
               },
-              "datePublished": new Date().toISOString().split('T')[0],
-              "dateModified": new Date().toISOString().split('T')[0],
+              "datePublished": defaultDate,
+              "dateModified": defaultDate,
               "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": postUrl
@@ -155,8 +159,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
                   <div className="mt-8 bg-white p-6 rounded-2xl border border-brand-primary/20 shadow-lg shadow-brand-primary/5 text-center hidden lg:block">
                     <p className="text-sm font-bold text-gray-600 mb-2">تواصل مباشر مع المندوب المعتمد</p>
-                    <a href="tel:0545478583" className="text-3xl font-black text-brand-primary block mb-6" dir="ltr">054 547 8583</a>
-                    <a href="https://wa.me/966545478583" target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-brand-secondary py-4 px-6 rounded-2xl font-bold shadow-[0_8px_20px_rgba(37,211,102,0.25)] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(37,211,102,0.35)] transition-all flex items-center justify-center gap-2">
+                    <a href={`tel:${PHONE_NUMBER}`} className="text-3xl font-black text-brand-primary block mb-6" dir="ltr">{PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3')}</a>
+                    <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-brand-secondary py-4 px-6 rounded-2xl font-bold shadow-[0_8px_20px_rgba(37,211,102,0.25)] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(37,211,102,0.35)] transition-all flex items-center justify-center gap-2">
                        <MessageCircle size={22} /> واتساب الآن
                     </a>
                   </div>
@@ -179,11 +183,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                        <h3 className="text-3xl mb-4 font-black">احجز موعد التركيب الآن، العرض لفترة محدودة</h3>
                        <p className="mb-8 text-gray-300 text-lg">سارع بالحصول على سرعتك القصوى وإنترنت غير محدود من رواد الاتصالات. تواصل معنا اليوم لاستغلال عرض التأسيس المجاني والراوتر المجاني.</p>
                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                         <a href="tel:0545478583" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg" dir="ltr">
+                         <a href={`tel:${PHONE_NUMBER}`} className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg" dir="ltr">
                            <Phone className="w-6 h-6 text-brand-primary" />
-                           054 547 8583
+                           {PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3')}
                          </a>
-                         <a href="https://wa.me/966545478583" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg">
+                         <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg">
                            <MessageCircle className="w-6 h-6" />
                            واتساب مباشر
                          </a>

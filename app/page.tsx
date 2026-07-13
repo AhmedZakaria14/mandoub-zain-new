@@ -11,18 +11,19 @@ import { Metadata } from 'next';
 import { Phone, MessageCircle, Zap, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { RiyalIcon } from 'riyal/react';
 import * as motion from 'framer-motion/client';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'تأسيس وتركيب إنترنت زين | عروض 5G والألياف البصرية',
-  description: 'احصل على أفضل خدمات وعروض زين لإنترنت 5G والألياف البصرية. تأسيس سريع، مودم مجاني، وباقات مميزة لتغطية شاملة في كافة أحياء الرياض والمملكة. اتصل بمندوب زين.',
+  description: `احصل على أفضل خدمات وعروض زين لإنترنت 5G والألياف البصرية. تأسيس سريع، مودم مجاني، وباقات مميزة لتغطية شاملة في كافة أحياء الرياض والمملكة. اتصل بمندوب زين.`,
   alternates: {
-    canonical: process.env.APP_URL ? `${process.env.APP_URL}/` : '/',
+    canonical: '/',
   }
 };
 
 export default function Home() {
-  const WHATSAPP_PHONE = "966545478583";
-  const DISPLAY_PHONE = "0545478583";
+  const WHATSAPP_PHONE = WHATSAPP_NUMBER;
+  const DISPLAY_PHONE = PHONE_NUMBER;
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-gray font-sans text-brand-secondary">
@@ -45,7 +46,7 @@ export default function Home() {
               },
               "areaServed": "المملكة العربية السعودية",
               "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع.",
-              "url": process.env.APP_URL || 'https://example.com',
+              "url": SITE_URL,
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "باقات زين المتاحة",
@@ -58,7 +59,7 @@ export default function Home() {
                   },
                   "price": pkg.price,
                   "priceCurrency": "SAR",
-                  "url": process.env.APP_URL || 'https://example.com'
+                  "url": SITE_URL
                 }))
               }
             })

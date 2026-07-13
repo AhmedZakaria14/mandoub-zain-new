@@ -1,4 +1,5 @@
 import React from 'react';
+import { SITE_URL } from '@/lib/config';
 
 interface BreadcrumbSchemaProps {
   articleTitle: string;
@@ -14,19 +15,19 @@ const BreadcrumbSchema: React.FC<BreadcrumbSchemaProps> = ({ articleTitle, artic
         "@type": "ListItem",
         "position": 1,
         "name": "الرئيسية",
-        "item": "https://www.zain5grouter.com/"
+        "item": `${SITE_URL}/`
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "المدونة",
-        "item": "https://www.zain5grouter.com/#blog"
+        "item": `${SITE_URL}/#blog`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": articleTitle,
-        "item": `https://www.zain5grouter.com/blog/${articleSlug}`
+        "item": `${SITE_URL}/blog/${articleSlug}`
       }
     ]
   };

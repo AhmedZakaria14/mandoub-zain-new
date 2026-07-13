@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Tajawal } from 'next/font/google';
 import './globals.css';
+import { SITE_URL, PHONE_NUMBER } from '@/lib/config';
 
 const tajawal = Tajawal({
   subsets: ['arabic'],
@@ -9,15 +10,18 @@ const tajawal = Tajawal({
   display: 'swap',
 });
 
-// The base APP_URL can be used for canonical links
-const baseUrl = process.env.APP_URL || 'https://zain-fiber-riyadh.com';
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#8AB825',
+};
 
 export const metadata: Metadata = {
   title: {
     default: 'عروض 5G وألياف بصرية - انترنت زين المنزلي',
     template: '%s | انترنت زين 5G وألياف'
   },
-  description: 'اكتشف أفضل عروض الإنترنت المنزلي 5G والألياف البصرية (الفايبر) من زين السعودية. تأسيس مجاني، تركيب سريع، وباقات إنترنت لا محدود بأسعار تنافسية. تواصل معنا الآن: 0545478583',
+  description: `اكتشف أفضل عروض الإنترنت المنزلي 5G والألياف البصرية (الفايبر) من زين السعودية. تأسيس مجاني، تركيب سريع، وباقات إنترنت لا محدود بأسعار تنافسية. تواصل معنا الآن: ${PHONE_NUMBER}`,
   keywords: ['زين', 'انترنت منزلي', '5G', 'ألياف بصرية', 'فايبر', 'عروض زين', 'تركيب انترنت', 'مندوب زين', 'تأسيس زين', 'ألياف زين', 'راوتر زين', 'السعودية', 'الرياض', 'إنترنت لا محدود'],
   authors: [{ name: 'موظف مبيعات زين' }],
   creator: 'مبيعات زين',
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ar_SA',
-    url: baseUrl,
+    url: SITE_URL,
     siteName: 'انترنت زين 5G وألياف بصرية',
     title: 'عروض 5G وألياف بصرية - انترنت زين المنزلي',
     description: 'أفضل عروض الإنترنت المنزلي 5G والألياف البصرية من زين السعودية. تأسيس مجاني وتركيب سريع.',
@@ -50,7 +54,7 @@ export const metadata: Metadata = {
     images: ['https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png'],
   },
   verification: {
-    google: 'ouC8vyCaESBN7B_uxCo_DA4UMFWaKkROWa-o1G1Cvpc',
+    google: 'ctTxmSY73XyaQXgU66_ArjlpCN3kbzizxVKvX_nxw4k',
   },
   icons: {
     icon: 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png',
@@ -68,21 +72,19 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  metadataBase: new URL(baseUrl),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl" className={tajawal.variable}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#8AB825" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Canonical Link */}
-        <link rel="canonical" href="https://www.zain5grouter.com/" />
-
         {/* Google Analytics (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-L5C6PS768D"></script>
         <script

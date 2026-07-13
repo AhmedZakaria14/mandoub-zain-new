@@ -1,4 +1,5 @@
 import { Header, Footer } from '@/components/LayoutComponents';
+import { PHONE_NUMBER } from '@/lib/config';
 
 export const metadata = {
   title: 'سياسة الخصوصية | زين 5G وألياف بصرية',
@@ -59,7 +60,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold mb-4 text-brand-secondary">6. التواصل معنا</h2>
             <p>
-              إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا عبر الرقم: <span className="font-bold" dir="ltr">0545478583</span>.
+              إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا عبر الرقم: <span className="font-bold" dir="ltr">{PHONE_NUMBER}</span>.
             </p>
           </section>
         </div>
