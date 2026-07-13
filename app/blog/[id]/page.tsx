@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import BreadcrumbSchema from '@/components/BreadcrumbSchema';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
 import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
 
@@ -66,36 +65,61 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     <div className="flex flex-col min-h-screen bg-brand-gray font-sans text-brand-secondary">
       <Header />
       <main className="flex-grow pt-24 pb-32 relative">
-        <BreadcrumbSchema articleTitle={post.title} articleSlug={post.slug} />
         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-brand-primary/10 to-transparent pointer-events-none"></div>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": post.title,
-              "description": `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
-              "image": post.imageUrl,
-              "author": {
-                "@type": "Person",
-                "name": "موظف مبيعات زين"
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "الرئيسية",
+                    "item": `${SITE_URL}/`
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "المدونة",
+                    "item": `${SITE_URL}/#blog`
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": post.title,
+                    "item": postUrl
+                  }
+                ]
               },
-              "publisher": {
-                "@type": "Organization",
-                "name": "زين 5G وألياف بصرية",
-                "logo": {
-                   "@type": "ImageObject",
-                   "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png`
+              {
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": post.title,
+                "description": `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
+                "image": post.imageUrl,
+                "author": {
+                  "@type": "Person",
+                  "name": "موظف مبيعات زين"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "زين 5G وألياف بصرية",
+                  "logo": {
+                     "@type": "ImageObject",
+                     "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png`
+                  }
+                },
+                "datePublished": defaultDate,
+                "dateModified": defaultDate,
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": postUrl
                 }
-              },
-              "datePublished": defaultDate,
-              "dateModified": defaultDate,
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": postUrl
               }
-            })
+            ])
           }}
         />
 
@@ -107,7 +131,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
           </nav>
 
           <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200 overflow-hidden mb-12">
-            <div className="relative h-[400px] md:h-[500px] w-full bg-white">
+            <div className="relative h-[300px] md:h-[450px] w-full bg-gray-50 border-b border-gray-100">
               <Image 
                 src={post.imageUrl}
                 alt={`تغطية وعروض ${post.title}`} 
@@ -115,19 +139,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 className="object-cover"
                 loading="eager" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-secondary/90 via-brand-secondary/40 to-transparent flex items-end p-8 md:p-16">
-                <div className="max-w-3xl">
-                  <div className="inline-block bg-brand-primary text-brand-secondary font-bold text-sm px-4 py-1.5 rounded-full mb-6 shadow-sm">
-                    تأسيس مجاني
-                  </div>
-                  <h1 className="text-4xl md:text-6xl font-black text-brand-secondary leading-[1.2] drop-shadow-md">
-                    {post.title}
-                  </h1>
-                </div>
-              </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 px-4 md:px-8 lg:px-16 pb-16">
+            <div className="px-4 md:px-8 lg:px-16 pt-8 md:pt-12 pb-16">
+              <div className="mb-8 md:mb-12">
+                <div className="inline-block bg-brand-primary/10 text-brand-secondary border border-brand-primary/20 font-bold text-sm px-4 py-1.5 rounded-full mb-4">
+                  <span className="inline-block w-2 h-2 rounded-full bg-brand-primary ml-2"></span>
+                  تأسيس مجاني
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-brand-secondary leading-[1.3] md:leading-[1.3] lg:leading-[1.2]">
+                  {post.title}
+                </h1>
+              </div>
+
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
               
               {/* Table of Contents - Sidebar / Mobile Native Accordion */}
               <aside className="w-full lg:w-1/3 relative mb-2 lg:mb-0">
@@ -197,6 +222,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
