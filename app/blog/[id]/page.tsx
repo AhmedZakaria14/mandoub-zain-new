@@ -23,9 +23,23 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   const postUrl = `${SITE_URL}/blog/${id}`;
 
+  let metaTitle = post.title;
+  let suffix = ' | زين 5G وألياف';
+  if ((metaTitle + suffix).length > 60) {
+     const availableLength = 60 - suffix.length - 3;
+     if (availableLength > 0) {
+        metaTitle = metaTitle.substring(0, availableLength) + '...';
+     }
+  }
+
+  let metaDesc = `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`;
+  if (metaDesc.length > 150) {
+      metaDesc = metaDesc.substring(0, 147) + '...';
+  }
+
   return {
-    title: `${post.title} | دليل عروض وباقات زين السعودية`,
-    description: `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`,
+    title: `${metaTitle}${suffix}`,
+    description: metaDesc,
     keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...post.title.split(' ').filter(w => w.length > 3)],
     openGraph: {
       title: `${post.title} | عروض 5G وألياف زين`,
