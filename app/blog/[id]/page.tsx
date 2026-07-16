@@ -83,57 +83,60 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([
-              {
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "الرئيسية",
-                    "item": `${SITE_URL}/`
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "المدونة",
-                    "item": `${SITE_URL}/#blog`
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": post.title,
-                    "item": postUrl
-                  }
-                ]
-              },
-              {
-                "@context": "https://schema.org",
-                "@type": "BlogPosting",
-                "headline": post.title,
-                "description": `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
-                "image": post.imageUrl,
-                "author": {
-                  "@type": "Person",
-                  "name": "موظف مبيعات زين"
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "الرئيسية",
+                  "item": `${SITE_URL}/`
                 },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "زين 5G وألياف بصرية",
-                  "logo": {
-                     "@type": "ImageObject",
-                     "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png`
-                  }
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "المدونة",
+                  "item": `${SITE_URL}/#blog`
                 },
-                "datePublished": defaultDate,
-                "dateModified": defaultDate,
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": postUrl
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": post.title,
+                  "item": postUrl
                 }
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": post.title,
+              "description": `تفاصيل وعروض ${post.title} لتأسيس إنترنت زين المنزلي الفائق.`,
+              "image": post.imageUrl,
+              "author": {
+                "@type": "Person",
+                "name": "موظف مبيعات زين"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "زين 5G وألياف بصرية",
+                "logo": {
+                   "@type": "ImageObject",
+                   "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png`
+                }
+              },
+              "datePublished": defaultDate,
+              "dateModified": defaultDate,
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": postUrl
               }
-            ])
+            })
           }}
         />
 
