@@ -6,6 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
 import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 
 // Generate static parameters for all blog posts
 export async function generateStaticParams() {
@@ -24,25 +27,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const postUrl = `${SITE_URL}/blog/${id}`;
 
   let metaTitle = post.title;
-  let suffix = ' | زين 5G وألياف';
-  if ((metaTitle + suffix).length > 60) {
-     const availableLength = 60 - suffix.length - 3;
-     if (availableLength > 0) {
-        metaTitle = metaTitle.substring(0, availableLength) + '...';
-     }
-  }
-
   let metaDesc = `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`;
+  
+  if (metaTitle.length > 60) {
+      metaTitle = metaTitle.substring(0, 57) + '...';
+  }
+  
   if (metaDesc.length > 150) {
       metaDesc = metaDesc.substring(0, 147) + '...';
   }
 
   return {
-    title: { absolute: `${metaTitle}${suffix}` },
+    title: metaTitle,
     description: metaDesc,
     keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...post.title.split(' ').filter(w => w.length > 3)],
     openGraph: {
-      title: `${post.title} | عروض 5G وألياف زين`,
+      title: metaTitle,
       description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
       type: 'article',
       url: postUrl,
@@ -189,7 +189,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                     </summary>
                     
                     <div className="pt-6 mt-4 border-t border-gray-200">
-                      {post.toc ? (
+                      {post.markdownToc ? (
+                        <div className="prose prose-sm prose-brand max-w-none text-gray-600 font-medium text-[15px] marker:text-brand-primary">
+                          <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+                            {post.markdownToc}
+                          </ReactMarkdown>
+                        </div>
+                      ) : post.toc ? (
                         post.toc
                       ) : (
                         <ul className="space-y-4 text-gray-600 font-medium text-[15px]">
@@ -212,7 +218,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               {/* Main Content */}
               <div className="w-full lg:w-2/3">
                 <div className="prose prose-lg px-2 md:px-0 max-w-none text-gray-600 font-medium leading-loose space-y-10">
-                  {post.content ? (
+                  {post.markdownContent ? (
+                    <div className="markdown-body">
+                      <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+                        {post.markdownContent}
+                      </ReactMarkdown>
+                    </div>
+                  ) : post.content ? (
                     post.content
                   ) : (
                     <div className="p-10 text-center">جاري تحديث المحتوى...</div>
