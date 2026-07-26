@@ -19,7 +19,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
-  const post = blogPosts.find(p => p.slug === id);
+  const decodedId = decodeURIComponent(id);
+  const post = blogPosts.find(p => p.slug === decodedId);
   if (!post) {
     return { title: 'الصفحة غير موجودة' };
   }
@@ -63,7 +64,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const post = blogPosts.find(p => p.slug === id);
+  const decodedId = decodeURIComponent(id);
+  const post = blogPosts.find(p => p.slug === decodedId);
   
   if (!post) {
     notFound();
@@ -191,9 +193,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                     <div className="pt-6 mt-4 border-t border-gray-200">
                       {post.markdownToc ? (
                         <div className="prose prose-sm prose-brand max-w-none text-gray-600 font-medium text-[15px] marker:text-brand-primary">
-                          <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
-                            {post.markdownToc}
-                          </ReactMarkdown>
+                          
+                      <ReactMarkdown 
+                        rehypePlugins={[rehypeRaw]} 
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          h2: () => null,
+                          ul: ({node, ...props}) => <ul className="space-y-4 text-gray-600 font-medium text-[15px] list-none p-0 m-0" {...props} />,
+                          li: ({node, ...props}) => <li className="p-0 m-0" {...props} />,
+                          a: ({node, ...props}) => (
+                            <a className="hover:text-brand-primary transition-colors flex items-center gap-2" {...props}>
+                              <div className="w-1.5 h-1.5 rounded-full bg-brand-primary/50 shrink-0"></div>
+                              {props.children}
+                            </a>
+                          )
+                        }}
+                      >
+                        {post.markdownToc}
+                      </ReactMarkdown>
+
                         </div>
                       ) : post.toc ? (
                         post.toc
@@ -220,9 +238,38 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 <div className="prose prose-lg px-2 md:px-0 max-w-none text-gray-600 font-medium leading-loose space-y-10">
                   {post.markdownContent ? (
                     <div className="markdown-body">
-                      <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+                      
+                      <ReactMarkdown 
+                        rehypePlugins={[rehypeRaw]} 
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          h2: ({node, ...props}) => (
+                            <h2 className="text-3xl font-black text-brand-secondary mb-6 flex items-center gap-3 mt-12 scroll-mt-24" {...props}>
+                              <span className="text-brand-primary">✦</span> {props.children}
+                            </h2>
+                          ),
+                          h3: ({node, ...props}) => (
+                            <h3 className="text-2xl font-bold text-brand-secondary mb-4 mt-8 flex items-center gap-2" {...props}>
+                              <div className="w-2 h-2 rounded-full bg-brand-primary"></div> {props.children}
+                            </h3>
+                          ),
+                          a: ({node, href, ...props}) => {
+                            const isInternal = href && (href.startsWith('/') || href.includes('zain5grouter.com'));
+                            return (
+                              <a 
+                                href={href} 
+                                target={isInternal ? "_blank" : undefined} 
+                                rel={isInternal ? "noopener noreferrer" : undefined} 
+                                className="text-brand-primary font-bold hover:underline" 
+                                {...props} 
+                              />
+                            );
+                          }
+                        }}
+                      >
                         {post.markdownContent}
                       </ReactMarkdown>
+
                     </div>
                   ) : post.content ? (
                     post.content

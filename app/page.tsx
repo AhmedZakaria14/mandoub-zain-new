@@ -277,6 +277,12 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
+            <div className="mt-12 text-center">
+              <Link href="/blog" className="inline-flex items-center gap-2 bg-brand-primary text-brand-secondary font-bold px-8 py-3 rounded-full hover:bg-brand-secondary hover:text-white transition-colors shadow-sm">
+                عرض جميع المقالات
+              </Link>
+            </div>
+
 
             {/* Comparison Table */}
             <ComparisonTable />
@@ -344,7 +350,7 @@ export default function Home() {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {blogPosts.slice(0, 8).map((post, idx) => (
+              {blogPosts.map((post, idx) => (
                 <motion.div 
                    initial={{ opacity: 0, y: 20 }}
                    whileInView={{ opacity: 1, y: 0 }}
