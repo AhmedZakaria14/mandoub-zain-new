@@ -1,4 +1,6 @@
-import { blogPosts } from '@/data/blogs';
+const fs = require('fs');
+
+const code = `import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -29,7 +31,7 @@ export default function BlogIndexPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {blogPosts.map((post) => (
               <div key={post.id} className="h-full">
-                <Link href={`/blog/${post.slug}`} className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300">
+                <Link href={\`/blog/\${post.slug}\`} className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl hover:border-brand-primary/30 transition-all duration-300">
                   <div className="relative h-[200px] w-full overflow-hidden">
                     <Image 
                       src={post.imageUrl}
@@ -64,3 +66,7 @@ export default function BlogIndexPage() {
     </div>
   );
 }
+`;
+
+fs.writeFileSync('app/blog/page.tsx', code, 'utf8');
+console.log('Updated app/blog/page.tsx');

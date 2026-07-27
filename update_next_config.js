@@ -1,4 +1,6 @@
-import type {NextConfig} from 'next';
+const fs = require('fs');
+
+const config = `import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -59,3 +61,7 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+`;
+
+fs.writeFileSync('next.config.ts', config, 'utf8');
+console.log('Updated next.config.ts');
