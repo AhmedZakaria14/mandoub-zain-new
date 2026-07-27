@@ -10,39 +10,22 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 
-export const dynamicParams = true;
-
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     id: post.slug,
   }));
 }
 
-function findPost(id: string) {
-  let decodedId = id;
-  try {
-    decodedId = decodeURIComponent(id);
-  } catch (e) {
-    // Ignore URI error
-  }
-
-  return blogPosts.find(p => 
-    p.slug === decodedId || 
-    p.slug === id || 
-    p.id.toString() === decodedId ||
-    p.id.toString() === id
-  );
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
-  const post = findPost(id);
+  const decodedId = decodeURIComponent(id);
+  const post = blogPosts.find(p => p.slug === decodedId);
 
   if (!post) {
     return { title: 'الصفحة غير موجودة' };
   }
 
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = `${SITE_URL}/blog/${id}`;
   let metaTitle = post.title;
   let metaDesc = post.metaDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`;
 
@@ -80,13 +63,14 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const post = findPost(id);
+  const decodedId = decodeURIComponent(id);
+  const post = blogPosts.find(p => p.slug === decodedId);
 
   if (!post) {
     notFound();
   }
 
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = `${SITE_URL}/blog/${id}`;
   const defaultDate = "2024-05-01";
 
   return (
