@@ -1,4 +1,7 @@
-import { blogPosts } from '@/data/blogs';
+const fs = require('fs');
+const filePath = 'app/blog/[id]/page.tsx';
+
+const code = `import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
@@ -42,9 +45,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return { title: 'الصفحة غير موجودة' };
   }
 
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = \`\${SITE_URL}/blog/\${post.slug}\`;
   let metaTitle = post.title;
-  let metaDesc = post.metaDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`;
+  let metaDesc = post.metaDescription || \`اقرأ تفاصيل: \${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.\`;
 
   if (metaTitle.length > 60) {
     metaTitle = metaTitle.substring(0, 57) + '...';
@@ -60,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...post.title.split(' ').filter(w => w.length > 3)],
     openGraph: {
       title: metaTitle,
-      description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
+      description: \`تعرف على تفاصيل وعروض \${post.title}. تأسيس مجاني وراوتر مجاني.\`,
       type: 'article',
       url: postUrl,
       images: [
@@ -86,7 +89,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     notFound();
   }
 
-  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const postUrl = \`\${SITE_URL}/blog/\${post.slug}\`;
   const defaultDate = "2024-05-01";
 
   return (
@@ -106,13 +109,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                   "@type": "ListItem",
                   "position": 1,
                   "name": "الرئيسية",
-                  "item": `${SITE_URL}/`
+                  "item": \`\${SITE_URL}/\`
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "المدونة",
-                  "item": `${SITE_URL}/blog`
+                  "item": \`\${SITE_URL}/blog\`
                 },
                 {
                   "@type": "ListItem",
@@ -143,7 +146,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "name": "زين السعودية - تغطية وعروض الفايبر و 5G",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png`
+                  "url": \`https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png\`
                 }
               },
               "datePublished": defaultDate,
@@ -169,7 +172,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             <div className="relative h-[300px] md:h-[450px] w-full bg-gray-50 border-b border-gray-100">
               <Image 
                 src={post.imageUrl}
-                alt={`تغطية وعروض ${post.title}`}
+                alt={\`تغطية وعروض \${post.title}\`}
                 fill
                 className="object-cover"
                 loading="eager"
@@ -238,8 +241,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
                     <div className="mt-8 bg-white p-6 rounded-2xl border border-brand-primary/20 shadow-lg shadow-brand-primary/5 text-center hidden lg:block">
                       <p className="text-sm font-bold text-gray-600 mb-2">تواصل مباشر مع المندوب المعتمد</p>
-                      <a href={`tel:${PHONE_NUMBER}`} className="text-3xl font-black text-brand-primary block mb-6" dir="ltr">{PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3')}</a>
-                      <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-brand-secondary py-4 px-6 rounded-2xl font-bold shadow-[0_8px_20px_rgba(37,211,102,0.25)] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(37,211,102,0.35)] transition-all flex items-center justify-center gap-2">
+                      <a href={\`tel:\${PHONE_NUMBER}\`} className="text-3xl font-black text-brand-primary block mb-6" dir="ltr">{PHONE_NUMBER.replace(/(\\d{3})(\\d{3})(\\d{4})/, '$1 $2 $3')}</a>
+                      <a href={\`https://wa.me/\${WHATSAPP_NUMBER}\`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-brand-secondary py-4 px-6 rounded-2xl font-bold shadow-[0_8px_20px_rgba(37,211,102,0.25)] hover:-translate-y-1 hover:shadow-[0_12px_25px_rgba(37,211,102,0.35)] transition-all flex items-center justify-center gap-2">
                         <MessageCircle size={22} /> واتساب الآن
                       </a>
                     </div>
@@ -318,11 +321,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                         <h3 className="text-3xl mb-4 font-black">احجز موعد التركيب الآن، العرض لفترة محدودة</h3>
                         <p className="mb-8 text-gray-300 text-lg">سارع بالحصول على سرعتك القصوى وإنترنت غير محدود من رواد الاتصالات. تواصل معنا اليوم لاستغلال عرض التأسيس المجاني والراوتر المجاني.</p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                          <a href={`tel:${PHONE_NUMBER}`} className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg" dir="ltr">
+                          <a href={\`tel:\${PHONE_NUMBER}\`} className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg" dir="ltr">
                             <Phone className="w-6 h-6 text-brand-primary" />
-                            {PHONE_NUMBER.replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3')}
+                            {PHONE_NUMBER.replace(/(\\d{3})(\\d{3})(\\d{4})/, '$1 $2 $3')}
                           </a>
-                          <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg">
+                          <a href={\`https://wa.me/\${WHATSAPP_NUMBER}\`} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] text-brand-secondary text-xl font-black px-8 py-4 rounded-2xl hover:scale-105 transition-transform shadow-lg">
                             <MessageCircle className="w-6 h-6" />
                             واتساب مباشر
                           </a>
@@ -341,3 +344,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
     </div>
   );
 }
+`;
+
+fs.writeFileSync(filePath, code, 'utf8');
+console.log('Fixed ENAMETOOLONG issue in app/blog/[id]/page.tsx');
