@@ -128,7 +128,7 @@ $page_title = "${articleTitle} | ${SITE_NAME}";
 $page_description = $meta_description;
 $page_keywords = "${keywordsStr}";
 $page_url = $canonical;
-$page_image = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279248/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B4%D8%B1%D9%83%D8%A9_%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6_nppqfj.png";
+$page_image = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png";
 $is_blog_post = true;
 
 // Mock include
@@ -197,7 +197,7 @@ $is_blog_post = true;
   <div class="container">
     <article>
       <div class="hero-img">
-        <img src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279248/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B4%D8%B1%D9%83%D8%A9_%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6_nppqfj.png" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
+        <img src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
         <div class="number-badge">${article.id}</div>
       </div>
       

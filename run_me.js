@@ -92,7 +92,7 @@ articles.forEach(article => {
     },
     "headline": articleTitle,
     "description": metaDesc,
-    "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279248/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B4%D8%B1%D9%83%D8%A9_%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6_nppqfj.png",
+    "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png",
     "author": {
       "@type": "Organization",
       "name": "الدليل السعودي",
@@ -126,7 +126,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 </script>
 
 <article dir="rtl" lang="ar">
-  <img src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777279248/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B4%D8%B1%D9%83%D8%A9_%D8%B2%D9%8A%D9%86_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6_nppqfj.png"
+  <img src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png"
        alt="مندوب زين الرياض لخدمات تركيب وتأسيس إنترنت 5G والألياف البصرية - ${articleTitle}"
        loading="lazy"
        style="width:100%; height:auto; border-radius:15px; margin-bottom:20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">

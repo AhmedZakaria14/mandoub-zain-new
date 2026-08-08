@@ -14,7 +14,7 @@ function replaceInDir(dir) {
     } else if (stat.isFile()) {
       let content = fs.readFileSync(filePath, 'utf8');
       let newContent = content
-        .replace(/https:\/\/res\.cloudinary\.com\/dxvjqrb9l\/image\/upload\/v1777279051\/logo_qeuexm\.png/g, 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png');
+        .replace(/https:\/\/res\.cloudinary\.com\/dxvjqrb9l\/image\/upload\/v1777279051\/logo_qeuexm\.png/g, 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png');
         
       if (content !== newContent) {
         fs.writeFileSync(filePath, newContent, 'utf8');

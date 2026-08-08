@@ -12,7 +12,7 @@ $page_title = isset($page_title) ? htmlspecialchars($page_title) . " | " . $site
 $page_description = isset($page_description) ? htmlspecialchars($page_description) : "تأسيس إنترنت منزلي فائق السرعة عبر مندوب مبيعات زين.";
 $page_keywords = isset($meta_keywords) ? htmlspecialchars($meta_keywords) : "إنترنت زين, 5G زين, ألياف بصرية, تأسيس إنترنت, مندوب مبيعات, زين السعودية, الرياض";
 $page_url = isset($page_url) ? htmlspecialchars($page_url) : "https://zain-fiber-riyadh.com/";
-$page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png";
+$page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png";
 ?>
 <!-- SEO Meta Tags -->
 <title><?php echo $page_title; ?></title>
@@ -54,7 +54,7 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.
     "name": "<?php echo $site_name; ?>",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png"
+      "url": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png"
     }
   },
   "datePublished": "<?php echo date('Y-m-d'); ?>",
@@ -72,7 +72,7 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "<?php echo $site_name; ?>",
-  "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png",
+  "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png",
   "telephone": "+966572587855",
   "address": {
     "@type": "PostalAddress",
