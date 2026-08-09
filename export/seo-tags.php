@@ -54,7 +54,7 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.
     "name": "<?php echo $site_name; ?>",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png"
+      "url": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1781351456/%D9%85%D9%86%D8%AF%D9%88%D8%A8_%D8%B2%D9%8A%D9%86_5G-removebg-preview_baa60n.png"
     }
   },
   "datePublished": "<?php echo date('Y-m-d'); ?>",
