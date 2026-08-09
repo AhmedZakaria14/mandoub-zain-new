@@ -116,7 +116,7 @@ $post = [
 
                     <div class="my-10 p-10 bg-gray-100 border border-gray-200 rounded-[20px] text-center shadow-inner">
                         <p class="text-xl mb-4 font-bold text-black">لطلب الخدمة وتحديد موعد التركيب المجاني</p>
-                        <a href="tel:0572587855" class="text-3xl font-black text-[#95c11f]" dir="ltr">
+                        <a href="tel:0537394981" class="text-3xl font-black text-[#95c11f]" dir="ltr">
                             057 258 7855
                         </a>
                     </div>

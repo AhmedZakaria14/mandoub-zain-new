@@ -73,7 +73,7 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.
   "@type": "LocalBusiness",
   "name": "<?php echo $site_name; ?>",
   "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png",
-  "telephone": "+966572587855",
+  "telephone": "+966537394981",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Riyadh",
