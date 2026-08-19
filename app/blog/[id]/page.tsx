@@ -1,11 +1,12 @@
 import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
 import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
+import { findBlogPostOrMatch } from '@/lib/blogUtils';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
@@ -18,14 +19,14 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
-  const decodedId = decodeURIComponent(id);
-  const post = blogPosts.find(p => p.slug === decodedId);
+  const matchResult = findBlogPostOrMatch(id);
+  const post = matchResult.post;
 
   if (!post) {
     return { title: 'الصفحة غير موجودة' };
   }
 
-  const postUrl = `${SITE_URL}/blog/${id}`;
+  const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   let metaTitle = post.title;
   let metaDesc = post.metaDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`;
 
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: metaTitle,
     description: metaDesc,
-    keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...post.title.split(' ').filter(w => w.length > 3)],
+    keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...(post.metaKeywords || post.title.split(' ').filter(w => w.length > 3))],
     openGraph: {
       title: metaTitle,
       description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
@@ -63,14 +64,20 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const decodedId = decodeURIComponent(id);
-  const post = blogPosts.find(p => p.slug === decodedId);
+  const matchResult = findBlogPostOrMatch(id);
 
-  if (!post) {
+  if (!matchResult.post) {
     notFound();
   }
 
-  const postUrl = `${SITE_URL}/blog/${id}`;
+  // If the requested URL is not the exact canonical slug (e.g. old phone number in slug, numeric ID, or keyword query),
+  // permanently 308/301 redirect to the correct canonical article URL for SEO authority transfer
+  if (!matchResult.isExact) {
+    permanentRedirect(`/blog/${encodeURIComponent(matchResult.post.slug)}`);
+  }
+
+  const post = matchResult.post;
+  const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   const defaultDate = "2024-05-01";
 
   return (
