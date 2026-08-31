@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
-import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, BRAND_IMAGE_URL } from '@/lib/config';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, LOGO_IMAGE_URL } from '@/lib/config';
 import { findBlogPostOrMatch } from '@/lib/blogUtils';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "name": "زين السعودية - تغطية وعروض الفايبر و 5G",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": BRAND_IMAGE_URL
+                  "url": LOGO_IMAGE_URL
                 }
               },
               "datePublished": datePublished,
