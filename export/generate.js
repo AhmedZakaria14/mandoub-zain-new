@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const OPERATOR = "زين";
-const PHONE = "0537394981";
+const PHONE = "0534768368";
 const BRAND = "زين";
 const SITE_NAME = "الدليل السعودي";
 const DOMAIN = "zain-fiber-riyadh.com";
@@ -28,27 +28,27 @@ function replaceTags(text, data) {
 }
 
 const articles = [
-  { id: 1, title: "موظف 5G زين الرياض اتصل 0537394981", template: "A", city: "الرياض", hood: "الرياض" },
-  { id: 2, title: "خدمات موظف 5G فى الربيع اتصل 0537394981", template: "A", city: "الرياض", hood: "الربيع" },
-  { id: 3, title: "عروض ألياف بصرية فى الصحافة اتصل 0537394981", template: "B", hood: "الصحافة" },
-  { id: 4, title: "أسعار 5G زين 2026 اتصل 0537394981", template: "C" },
-  { id: 5, title: "موظف تأسيس وتركيب 5G زين الرياض اتصل 0537394981", template: "A", city: "الرياض", hood: "الرياض" },
-  { id: 6, title: "موظف ألياف زين النرجس اتصل 0537394981", template: "A", city: "الرياض", hood: "النرجس" },
-  { id: 7, title: "موظف ألياف زين الياسمين اتصل 0537394981", template: "A", city: "الرياض", hood: "الياسمين" },
-  { id: 8, title: "موظف ألياف زين الملقا اتصل 0537394981", template: "A", city: "الرياض", hood: "الملقا" },
-  { id: 9, title: "موظف ألياف زين السعادة اتصل 0537394981", template: "A", city: "الرياض", hood: "السعادة" },
-  { id: 10, title: "موظف ألياف زين القيروان اتصل 0537394981", template: "A", city: "الرياض", hood: "القيروان" },
-  { id: 11, title: "موظف ألياف زين الحزم اتصل 0537394981", template: "A", city: "الرياض", hood: "الحزم" },
-  { id: 12, title: "موظف ألياف زين النهضة اتصل 0537394981", template: "A", city: "الرياض", hood: "النهضة" },
-  { id: 13, title: "عروض ألياف بصرية فى النسيم الغربي اتصل 0537394981", template: "B", hood: "النسيم الغربي" },
-  { id: 14, title: "عروض ألياف بصرية فى ظهرات لبن اتصل 0537394981", template: "B", hood: "ظهرات لبن" },
-  { id: 15, title: "عروض ألياف بصرية فى طويق اتصل 0537394981", template: "B", hood: "طويق" },
-  { id: 16, title: "عروض ألياف بصرية فى العريجاء اتصل 0537394981", template: "B", hood: "العريجاء" },
-  { id: 17, title: "عروض ألياف بصرية فى ظهرات نمار اتصل 0537394981", template: "B", hood: "ظهرات نمار" },
-  { id: 18, title: "عروض ألياف بصرية فى البديعة اتصل 0537394981", template: "B", hood: "البديعة" },
-  { id: 21, title: "عروض ألياف بصرية فى عنيزة اتصل 0537394981", template: "B", hood: "عنيزة" },
-  { id: 23, title: "عروض ألياف بصرية فى الزلفي اتصل 0537394981", template: "B", hood: "الزلفي" },
-  { id: 26, title: "عروض ألياف بصرية فى النسيم الشرقي اتصل 0537394981", template: "B", hood: "النسيم الشرقي" }
+  { id: 1, title: "موظف 5G زين الرياض اتصل 0534768368", template: "A", city: "الرياض", hood: "الرياض" },
+  { id: 2, title: "خدمات موظف 5G فى الربيع اتصل 0534768368", template: "A", city: "الرياض", hood: "الربيع" },
+  { id: 3, title: "عروض ألياف بصرية فى الصحافة اتصل 0534768368", template: "B", hood: "الصحافة" },
+  { id: 4, title: "أسعار 5G زين 2026 اتصل 0534768368", template: "C" },
+  { id: 5, title: "موظف تأسيس وتركيب 5G زين الرياض اتصل 0534768368", template: "A", city: "الرياض", hood: "الرياض" },
+  { id: 6, title: "موظف ألياف زين النرجس اتصل 0534768368", template: "A", city: "الرياض", hood: "النرجس" },
+  { id: 7, title: "موظف ألياف زين الياسمين اتصل 0534768368", template: "A", city: "الرياض", hood: "الياسمين" },
+  { id: 8, title: "موظف ألياف زين الملقا اتصل 0534768368", template: "A", city: "الرياض", hood: "الملقا" },
+  { id: 9, title: "موظف ألياف زين السعادة اتصل 0534768368", template: "A", city: "الرياض", hood: "السعادة" },
+  { id: 10, title: "موظف ألياف زين القيروان اتصل 0534768368", template: "A", city: "الرياض", hood: "القيروان" },
+  { id: 11, title: "موظف ألياف زين الحزم اتصل 0534768368", template: "A", city: "الرياض", hood: "الحزم" },
+  { id: 12, title: "موظف ألياف زين النهضة اتصل 0534768368", template: "A", city: "الرياض", hood: "النهضة" },
+  { id: 13, title: "عروض ألياف بصرية فى النسيم الغربي اتصل 0534768368", template: "B", hood: "النسيم الغربي" },
+  { id: 14, title: "عروض ألياف بصرية فى ظهرات لبن اتصل 0534768368", template: "B", hood: "ظهرات لبن" },
+  { id: 15, title: "عروض ألياف بصرية فى طويق اتصل 0534768368", template: "B", hood: "طويق" },
+  { id: 16, title: "عروض ألياف بصرية فى العريجاء اتصل 0534768368", template: "B", hood: "العريجاء" },
+  { id: 17, title: "عروض ألياف بصرية فى ظهرات نمار اتصل 0534768368", template: "B", hood: "ظهرات نمار" },
+  { id: 18, title: "عروض ألياف بصرية فى البديعة اتصل 0534768368", template: "B", hood: "البديعة" },
+  { id: 21, title: "عروض ألياف بصرية فى عنيزة اتصل 0534768368", template: "B", hood: "عنيزة" },
+  { id: 23, title: "عروض ألياف بصرية فى الزلفي اتصل 0534768368", template: "B", hood: "الزلفي" },
+  { id: 26, title: "عروض ألياف بصرية فى النسيم الشرقي اتصل 0534768368", template: "B", hood: "النسيم الشرقي" }
 ];
 
 const templateA = `<h1>موظف 5G [OPERATOR] [NEIGHBORHOOD]</h1>
@@ -128,7 +128,7 @@ $page_title = "${articleTitle} | ${SITE_NAME}";
 $page_description = $meta_description;
 $page_keywords = "${keywordsStr}";
 $page_url = $canonical;
-$page_image = "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png";
+$page_image = "https://www.zain5grouter.com/images/zain-representative-0534768368.webp";
 $is_blog_post = true;
 
 // Mock include
@@ -197,7 +197,7 @@ $is_blog_post = true;
   <div class="container">
     <article>
       <div class="hero-img">
-        <img src="https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
+        <img src="https://www.zain5grouter.com/images/zain-representative-0534768368.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
         <div class="number-badge">${article.id}</div>
       </div>
       

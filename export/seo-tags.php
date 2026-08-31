@@ -12,7 +12,7 @@ $page_title = isset($page_title) ? htmlspecialchars($page_title) . " | " . $site
 $page_description = isset($page_description) ? htmlspecialchars($page_description) : "تأسيس إنترنت منزلي فائق السرعة عبر مندوب مبيعات زين.";
 $page_keywords = isset($meta_keywords) ? htmlspecialchars($meta_keywords) : "إنترنت زين, 5G زين, ألياف بصرية, تأسيس إنترنت, مندوب مبيعات, زين السعودية, الرياض";
 $page_url = isset($page_url) ? htmlspecialchars($page_url) : "https://zain-fiber-riyadh.com/";
-$page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png";
+$page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://www.zain5grouter.com/images/zain-representative-0534768368.webp";
 ?>
 <!-- SEO Meta Tags -->
 <title><?php echo $page_title; ?></title>
@@ -72,8 +72,8 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://res.
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "<?php echo $site_name; ?>",
-  "image": "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png",
-  "telephone": "+966537394981",
+  "image": "https://www.zain5grouter.com/images/zain-representative-0534768368.webp",
+  "telephone": "+966534768368",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Riyadh",

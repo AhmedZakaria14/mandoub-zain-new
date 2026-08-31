@@ -14,7 +14,7 @@ function replaceInDir(dir) {
     } else if (stat.isFile()) {
       let content = fs.readFileSync(filePath, 'utf8');
       let newContent = content
-        .replace(/https:\/\/res\.cloudinary\.com\/dxvjqrb9l\/image\/upload\/v1777279051\/logo_qeuexm\.png/g, 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png');
+        .replace(/https:\/\/res\.cloudinary\.com\/dxvjqrb9l\/image\/upload\/v1777279051\/logo_qeuexm\.png/g, 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp');
         
       if (content !== newContent) {
         fs.writeFileSync(filePath, newContent, 'utf8');

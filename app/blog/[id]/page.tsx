@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
-import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, BRAND_IMAGE_URL } from '@/lib/config';
 import { findBlogPostOrMatch } from '@/lib/blogUtils';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -27,16 +27,17 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 
   const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
+  const postImageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`;
   let metaTitle = post.title;
-  let metaDesc = post.metaDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية. تأسيس فوري وبدون رسوم إضافية.`;
+  let metaDesc = post.metaDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية.`;
 
   if (metaTitle.length > 60) {
-    metaTitle = metaTitle.substring(0, 57) + '...';
+    const titleWithoutPhone = metaTitle.replace(PHONE_NUMBER, '').trim();
+    metaTitle = `${titleWithoutPhone.substring(0, 46).trim()} ${PHONE_NUMBER}`;
   }
 
-  if (metaDesc.length > 150) {
-    metaDesc = metaDesc.substring(0, 147) + '...';
-  }
+  metaDesc = metaDesc.replace(PHONE_NUMBER, '').trim();
+  metaDesc = `${metaDesc.substring(0, 136).trim()} اتصل ${PHONE_NUMBER}`;
 
   return {
     title: metaTitle,
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       url: postUrl,
       images: [
         {
-          url: post.imageUrl,
+          url: postImageUrl,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -78,7 +79,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   const post = matchResult.post;
   const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
-  const defaultDate = "2024-05-01";
+  const datePublished = "2024-05-01";
+  const dateModified = "2026-08-31";
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-gray font-sans text-brand-secondary">
@@ -123,7 +125,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": post.title,
-              "image": [post.imageUrl],
+              "image": [post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`],
               "author": {
                 "@type": "Organization",
                 "name": "زين السعودية",
@@ -134,11 +136,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "name": "زين السعودية - تغطية وعروض الفايبر و 5G",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png`
+                  "url": BRAND_IMAGE_URL
                 }
               },
-              "datePublished": defaultDate,
-              "dateModified": defaultDate,
+              "datePublished": datePublished,
+              "dateModified": dateModified,
               "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": postUrl

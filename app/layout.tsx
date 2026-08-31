@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Tajawal } from 'next/font/google';
 import './globals.css';
-import { SITE_URL, PHONE_NUMBER } from '@/lib/config';
+import { SITE_URL } from '@/lib/config';
 
 const tajawal = Tajawal({
   subsets: ['arabic'],
@@ -10,8 +10,9 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: 'زين فايبر | عروض باقات زين فايبر المنزلي اتصل 0537394981',
-  description: 'اشترك الآن في باقات زين فايبر واحصل على إنترنت لامحدود بسرعات عالية.',
+  metadataBase: new URL(SITE_URL),
+  title: 'زين فايبر | عروض باقات زين فايبر المنزلي اتصل 0534768368',
+  description: 'اشترك الآن في باقات زين فايبر واحصل على إنترنت لامحدود بسرعات عالية. اتصل بمندوب زين على 0534768368.',
 };
 
 export const viewport: Viewport = {

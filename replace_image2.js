@@ -1,7 +1,7 @@
 const fs = require('fs');
-const newUrl = 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png';
-const oldUrl1 = 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png';
-const oldUrl2 = 'https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png';
+const newUrl = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
+const oldUrl1 = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
+const oldUrl2 = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
 
 const files = [
   'components/Slideshow.tsx', 

@@ -3,5 +3,5 @@
     RewriteBase /
 
     # Redirect old phone numbers in URLs to new ones
-    RewriteRule ^blog/(.*)(0572587855|0545478583|572587855|545478583)(.*)$ /blog/$10537394981$3 [R=301,L,NE]
+    RewriteRule ^blog/(.*)(0537394981|0572587855|0545478583|572587855|545478583)(.*)$ /blog/$10534768368$3 [R=301,L,NE]
 </IfModule>

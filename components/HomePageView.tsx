@@ -12,7 +12,7 @@ import Image from 'next/image';
 import { Phone, MessageCircle, Zap, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { RiyalIcon } from 'riyal/react';
 import * as motion from 'framer-motion/client';
-import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER } from '@/lib/config';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, BRAND_IMAGE_URL } from '@/lib/config';
 
 
 export function HomePageView() {
@@ -36,7 +36,7 @@ export function HomePageView() {
                 "@type": "Organization",
                 "name": "مبيعات زين 5G وألياف",
                 "telephone": `+${WHATSAPP_PHONE}`,
-                "image": `https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png`
+                "image": BRAND_IMAGE_URL
               },
               "areaServed": "المملكة العربية السعودية",
               "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع.",

@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
                 "name": "زين السعودية - تغطية وعروض الفايبر و 5G",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": \`https://res.cloudinary.com/dxvjqrb9l/image/upload/v1786190532/file_000000009f5c81f49864c6942a7ee3ac_ceafpv.png\`
+                  "url": \`https://www.zain5grouter.com/images/zain-representative-0534768368.webp\`
                 }
               },
               "datePublished": defaultDate,

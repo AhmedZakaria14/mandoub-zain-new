@@ -6,12 +6,12 @@ allFiles.forEach(file => {
   if (file.endsWith('.js') || file.endsWith('.php') || file.endsWith('.html')) {
     let content = fs.readFileSync(file, 'utf8');
     let changed = false;
-    if (content.includes('0537394981')) {
-      content = content.replace(/0537394981/g, '0537394981');
+    if (content.includes('0534768368')) {
+      content = content.replace(/0534768368/g, '0534768368');
       changed = true;
     }
-    if (content.includes('0537394981')) {
-      content = content.replace(/0537394981/g, '0537394981');
+    if (content.includes('0534768368')) {
+      content = content.replace(/0534768368/g, '0534768368');
       changed = true;
     }
     if (changed) {

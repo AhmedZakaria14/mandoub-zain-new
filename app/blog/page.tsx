@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'المدونة والمقالات | زين فايبر و 5G',
-  description: 'تصفح أحدث المقالات والأخبار وعروض زين فايبر وانترنت الجيل الخامس في السعودية.',
+  title: 'المدونة والمقالات | زين فايبر و5G | 0534768368',
+  description: 'تصفح أحدث المقالات وعروض زين فايبر وإنترنت الجيل الخامس في السعودية، وللاشتراك اتصل بمندوب زين على 0534768368.',
 };
 
 export default function BlogIndexPage() {
