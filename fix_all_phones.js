@@ -14,12 +14,12 @@ allFiles.forEach(file => {
       content = content.replace(/+201010742430/g, '+201010742430');
       changed = true;
     }
-    if (content.includes('966+201010742430')) {
-      content = content.replace(/966+201010742430/g, '966+201010742430');
+    if (content.includes('201010742430')) {
+      content = content.replace(/201010742430/g, '201010742430');
       changed = true;
     }
-    if (content.includes('966+201010742430')) {
-      content = content.replace(/966+201010742430/g, '966+201010742430');
+    if (content.includes('201010742430')) {
+      content = content.replace(/201010742430/g, '201010742430');
       changed = true;
     }
     if (changed) {
