@@ -8,9 +8,9 @@ allFiles.forEach(file => {
     let changed = false;
     
     // Replace the number without leading zero, if it exists
-    if (content.includes('0534768368')) {
+    if (content.includes('+201010742430')) {
       // Avoid matching if it's part of another longer number (though we already checked that)
-      content = content.replace(/0534768368/g, '0534768368');
+      content = content.replace(/+201010742430/g, '+201010742430');
       changed = true;
     }
 
