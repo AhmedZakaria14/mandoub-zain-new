@@ -128,7 +128,7 @@ $page_title = "${articleTitle} | ${SITE_NAME}";
 $page_description = $meta_description;
 $page_keywords = "${keywordsStr}";
 $page_url = $canonical;
-$page_image = "https://www.zain5grouter.com/images/zain-representative-0534768368.webp";
+$page_image = "https://www.zain5grouter.com/images/zain-representative.webp";
 $is_blog_post = true;
 
 // Mock include
@@ -197,7 +197,7 @@ $is_blog_post = true;
   <div class="container">
     <article>
       <div class="hero-img">
-        <img src="https://www.zain5grouter.com/images/zain-representative-0534768368.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
+        <img src="https://www.zain5grouter.com/images/zain-representative.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
         <div class="number-badge">${article.id}</div>
       </div>
       
