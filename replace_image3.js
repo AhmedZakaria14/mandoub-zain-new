@@ -1,8 +1,8 @@
 const fs = require('fs');
-const newUrl = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
-const oldUrl1 = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
-const oldUrl2 = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
-const oldUrl3 = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
+const newUrl = 'https://www.zain5grouter.com/images/zain-representative.webp';
+const oldUrl1 = 'https://www.zain5grouter.com/images/zain-representative.webp';
+const oldUrl2 = 'https://www.zain5grouter.com/images/zain-representative.webp';
+const oldUrl3 = 'https://www.zain5grouter.com/images/zain-representative.webp';
 
 const execSync = require('child_process').execSync;
 const allFiles = execSync('find . -type f -not -path "*/.next/*" -not -path "*/node_modules/*"').toString().split('\n').filter(Boolean);
