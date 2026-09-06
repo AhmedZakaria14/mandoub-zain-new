@@ -92,7 +92,7 @@ articles.forEach(article => {
     },
     "headline": articleTitle,
     "description": metaDesc,
-    "image": "https://www.zain5grouter.com/images/zain-representative-0534768368.webp",
+    "image": "https://www.zain5grouter.com/images/zain-representative.webp",
     "author": {
       "@type": "Organization",
       "name": "الدليل السعودي",
@@ -126,7 +126,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 </script>
 
 <article dir="rtl" lang="ar">
-  <img src="https://www.zain5grouter.com/images/zain-representative-0534768368.webp"
+  <img src="https://www.zain5grouter.com/images/zain-representative.webp"
        alt="مندوب زين الرياض لخدمات تركيب وتأسيس إنترنت 5G والألياف البصرية - ${articleTitle}"
        loading="lazy"
        style="width:100%; height:auto; border-radius:15px; margin-bottom:20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
