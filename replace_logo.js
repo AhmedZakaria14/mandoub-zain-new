@@ -14,7 +14,7 @@ function replaceInDir(dir) {
     } else if (stat.isFile()) {
       let content = fs.readFileSync(filePath, 'utf8');
       let newContent = content
-        .replace(/https:\/\/res\.cloudinary\.com\/dxvjqrb9l\/image\/upload\/v1777279051\/logo_qeuexm\.png/g, 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp');
+        .replace(/https:\/\/res\.cloudinary\.com\/dxvjqrb9l\/image\/upload\/v1777279051\/logo_qeuexm\.png/g, 'https://www.zain5grouter.com/images/zain-representative.webp');
         
       if (content !== newContent) {
         fs.writeFileSync(filePath, newContent, 'utf8');
