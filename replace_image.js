@@ -1,6 +1,6 @@
 const fs = require('fs');
-const oldUrl = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
-const newUrl = 'https://www.zain5grouter.com/images/zain-representative-0534768368.webp';
+const oldUrl = 'https://www.zain5grouter.com/images/zain-representative.webp';
+const newUrl = 'https://www.zain5grouter.com/images/zain-representative.webp';
 
 ['components/Slideshow.tsx', 'data/blogs.tsx'].forEach(file => {
   if (fs.existsSync(file)) {
