@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { packages } from '@/data/packages';
-import { blogPosts } from '@/data/blogs';
+import { blogPosts } from '@/lib/blogPosts';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { Slideshow } from '@/components/Slideshow';
 import { FAQSection } from '@/components/FAQ';

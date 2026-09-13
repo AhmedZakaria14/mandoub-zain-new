@@ -1,5 +1,4 @@
-import { RENTAL_DESCRIPTION } from '@/lib/rentalMetadata';
-import { blogPosts } from '@/data/blogs';
+import { blogPosts } from '@/lib/blogPosts';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { Metadata } from 'next';
@@ -29,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   const postImageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`;
-  const metaTitle = `الموقع متاح للإيجار | ${post.title}`;
-  const metaDesc = RENTAL_DESCRIPTION;
+  const metaTitle = post.title;
+  const metaDesc = post.metaDescription;
 
   return {
     title: metaTitle,
@@ -119,7 +118,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": post.title,
-              "description": RENTAL_DESCRIPTION,
+              "description": post.metaDescription,
               "image": [post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`],
               "author": {
                 "@type": "Organization",

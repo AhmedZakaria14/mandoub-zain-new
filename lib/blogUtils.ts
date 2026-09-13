@@ -1,4 +1,4 @@
-import { blogPosts, BlogPost } from '@/data/blogs';
+import { blogPosts, BlogPost } from '@/lib/blogPosts';
 
 export function findBlogPostOrMatch(rawInput: string): { post: BlogPost | null; isExact: boolean } {
   if (!rawInput) return { post: null, isExact: false };

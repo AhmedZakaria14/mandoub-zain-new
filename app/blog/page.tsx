@@ -1,5 +1,5 @@
 import { rentalMetadata } from '@/lib/rentalMetadata';
-import { blogPosts } from '@/data/blogs';
+import { blogPosts } from '@/lib/blogPosts';
 import { Header, Footer } from '@/components/LayoutComponents';
 import Link from 'next/link';
 import Image from 'next/image';
