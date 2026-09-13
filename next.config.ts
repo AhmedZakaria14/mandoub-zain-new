@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
       ['/blog/zain-5g-unlimited', `/blog/${encodeURIComponent('زين-لا-محدود-5G-تجربة-إنترنت-فائقة-السرعة-تلبي-جميع-احتياجاتك-الرقمية-+201010742430')}`],
     ];
 
-    return legacyMap.map(([source, destination]) => ({
+    return legacyMap.filter(([source, destination]) => decodeURIComponent(source) !== decodeURIComponent(destination)).map(([source, destination]) => ({
       source,
       destination,
       permanent: true,

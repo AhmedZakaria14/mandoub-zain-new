@@ -7,13 +7,14 @@
 // $page_image (Optional)
 // $is_blog_post (Boolean) - true if rendering a blog post
 
-$site_name = "مبيعات زين 5G وألياف بصرية";
+$site_name = "الموقع متاح للإيجار | زين 5G";
 $page_title = isset($page_title) ? htmlspecialchars($page_title) . " | " . $site_name : $site_name;
 $page_description = isset($page_description) ? htmlspecialchars($page_description) : "تأسيس إنترنت منزلي فائق السرعة عبر مندوب مبيعات زين.";
 $page_keywords = isset($meta_keywords) ? htmlspecialchars($meta_keywords) : "إنترنت زين, 5G زين, ألياف بصرية, تأسيس إنترنت, مندوب مبيعات, زين السعودية, الرياض";
 $page_url = isset($page_url) ? htmlspecialchars($page_url) : "https://zain-fiber-riyadh.com/";
-$page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://www.zain5grouter.com/images/zain-representative-0534768368.webp";
+$page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://www.zain5grouter.com/images/zain-representative-rental.webp";
 ?>
+<?php $page_description = "الموقع متاح للإيجار. للاستفسار +20 10 10742430. " . $page_description; ?>
 <!-- SEO Meta Tags -->
 <title><?php echo $page_title; ?></title>
 <meta name="description" content="<?php echo $page_description; ?>">
@@ -72,8 +73,8 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://www.
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "<?php echo $site_name; ?>",
-  "image": "https://www.zain5grouter.com/images/zain-representative-0534768368.webp",
-  "telephone": "+966534768368",
+  "image": "https://www.zain5grouter.com/images/zain-representative-rental.webp",
+  "telephone": "+201010742430",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Riyadh",

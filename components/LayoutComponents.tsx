@@ -46,8 +46,8 @@ export function Header() {
           {[...Array(6)].map((_, i) => (
             <div key={i} className="flex items-center gap-2">
               <Sparkles size={16} />
-              <span>عرض محدود لفترة محدودة: احصل على تركيب مجاني الآن</span>
-              <a href={`tel:${displayPhone}`} className="underline pr-2 hover:text-white transition-colors">اتصل بالمندوب الآن</a>
+              <span>الموقع متاح للإيجار</span>
+              <a href={`tel:${displayPhone}`} className="underline pr-2 hover:text-white transition-colors">للاستفسار عن الإيجار: <bdi dir="ltr">+20 10 10742430</bdi></a>
             </div>
           ))}
         </motion.div>

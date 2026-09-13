@@ -1,3 +1,4 @@
+import { rentalMetadata } from '@/lib/rentalMetadata';
 import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
 import Link from 'next/link';
@@ -5,8 +6,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'المدونة والمقالات | زين فايبر و5G | +201010742430',
-  description: 'تصفح أحدث المقالات وعروض زين فايبر وإنترنت الجيل الخامس في السعودية، وللاشتراك اتصل بمندوب زين على +201010742430.',
+  ...rentalMetadata('الموقع متاح للإيجار | المدونة — زين 5G'),
 };
 
 export default function BlogIndexPage() {

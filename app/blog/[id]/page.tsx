@@ -1,3 +1,4 @@
+import { RENTAL_DESCRIPTION } from '@/lib/rentalMetadata';
 import { blogPosts } from '@/data/blogs';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { notFound, permanentRedirect } from 'next/navigation';
@@ -28,24 +29,17 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   const postImageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`;
-  let metaTitle = post.title;
-  let metaDesc = post.metaDescription || `اقرأ تفاصيل: ${post.title}. تصفح أحدث عروض وباقات الإنترنت المنزلي 5G والألياف البصرية من زين في السعودية.`;
-
-  if (metaTitle.length > 60) {
-    const titleWithoutPhone = metaTitle.replace(PHONE_NUMBER, '').trim();
-    metaTitle = `${titleWithoutPhone.substring(0, 46).trim()} ${PHONE_NUMBER}`;
-  }
-
-  metaDesc = metaDesc.replace(PHONE_NUMBER, '').trim();
-  metaDesc = `${metaDesc.substring(0, 136).trim()} اتصل ${PHONE_NUMBER}`;
+  const metaTitle = `الموقع متاح للإيجار | ${post.title}`;
+  const metaDesc = RENTAL_DESCRIPTION;
 
   return {
     title: metaTitle,
     description: metaDesc,
-    keywords: ['زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...(post.metaKeywords || post.title.split(' ').filter(w => w.length > 3))],
+    twitter: { card: 'summary_large_image', title: metaTitle, description: metaDesc, images: [postImageUrl] },
+    keywords: ['الموقع متاح للإيجار', 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...(post.metaKeywords || post.title.split(' ').filter(w => w.length > 3))],
     openGraph: {
       title: metaTitle,
-      description: `تعرف على تفاصيل وعروض ${post.title}. تأسيس مجاني وراوتر مجاني.`,
+      description: metaDesc,
       type: 'article',
       url: postUrl,
       images: [
@@ -125,6 +119,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               "@context": "https://schema.org",
               "@type": "BlogPosting",
               "headline": post.title,
+              "description": RENTAL_DESCRIPTION,
               "image": [post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`],
               "author": {
                 "@type": "Organization",

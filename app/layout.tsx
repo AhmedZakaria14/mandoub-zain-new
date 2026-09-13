@@ -1,3 +1,4 @@
+import { rentalMetadata } from '@/lib/rentalMetadata';
 import type { Metadata, Viewport } from 'next';
 import { Tajawal } from 'next/font/google';
 import './globals.css';
@@ -11,8 +12,7 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'زين فايبر | عروض باقات زين فايبر المنزلي اتصل +201010742430',
-  description: 'اشترك الآن في باقات زين فايبر واحصل على إنترنت لامحدود بسرعات عالية. اتصل بمندوب زين على +201010742430.',
+  ...rentalMetadata(),
 };
 
 export const viewport: Viewport = {

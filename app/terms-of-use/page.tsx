@@ -1,8 +1,8 @@
+import { rentalMetadata } from '@/lib/rentalMetadata';
 import { Header, Footer } from '@/components/LayoutComponents';
 
 export const metadata = {
-  title: 'شروط الاستخدام | زين 5G وألياف بصرية',
-  description: 'شروط وأحكام استخدام موقع zain5grouter.com - إخلاء المسؤولية والقواعد التنظيمية.',
+  ...rentalMetadata('الموقع متاح للإيجار | شروط الاستخدام'),
 };
 
 export default function TermsOfUse() {

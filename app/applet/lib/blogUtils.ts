@@ -20,7 +20,7 @@ export function findBlogPostOrMatch(rawInput: string): { post: BlogPost | null; 
 
   // 3. Match after replacing any legacy phone numbers with current number (+201010742430)
   const withNewNumber = decoded
-    .replace(/+201010742430|+201010742430|+201010742430|+201010742430|+201010742430/g, '+201010742430')
+    .replace(/(?:\+?966|0)534768368/g, '+201010742430')
     .replace(/\s+/g, '-');
   const numberMatch = blogPosts.find(p => p.slug === withNewNumber);
   if (numberMatch) return { post: numberMatch, isExact: false };

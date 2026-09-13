@@ -29,32 +29,15 @@ export function HomePageView() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Service",
-              "serviceType": "تأسيس وتركيب إنترنت 5G وألياف بصرية",
-              "name": "مبيعات زين 5G وألياف",
-              "provider": {
-                "@type": "Organization",
-                "name": "مبيعات زين 5G وألياف",
-                "telephone": `+${WHATSAPP_PHONE}`,
-                "image": BRAND_IMAGE_URL
-              },
-              "areaServed": "المملكة العربية السعودية",
-              "description": "خدمات تأسيس وتركيب إنترنت زين 5G والألياف البصرية للمنازل في مدينة الرياض وكافة أنحاء السعودية بأفضل العروض لتجربة تصفح أسرع.",
+              "@type": "WebSite",
+              "name": "الموقع متاح للإيجار | زين 5G",
+              "description": "الموقع متاح للإيجار. للاستفسار اتصل على +20 10 10742430",
               "url": SITE_URL,
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "باقات زين المتاحة",
-                "itemListElement": packages.map((pkg) => ({
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": pkg.title,
-                    "description": pkg.subtitle
-                  },
-                  "price": pkg.price,
-                  "priceCurrency": "SAR",
-                  "url": SITE_URL
-                }))
+              "image": BRAND_IMAGE_URL,
+              "publisher": {
+                "@type": "Organization",
+                "name": "إدارة الموقع",
+                "telephone": PHONE_NUMBER
               }
             })
           }}

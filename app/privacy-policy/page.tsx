@@ -1,9 +1,9 @@
+import { rentalMetadata } from '@/lib/rentalMetadata';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { PHONE_NUMBER } from '@/lib/config';
 
 export const metadata = {
-  title: 'سياسة الخصوصية | زين 5G وألياف بصرية',
-  description: 'سياسة الخصوصية لموقع zain5grouter.com - تعرف على كيفية تعاملنا مع بياناتك.',
+  ...rentalMetadata('الموقع متاح للإيجار | سياسة الخصوصية'),
 };
 
 export default function PrivacyPolicy() {

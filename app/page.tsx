@@ -1,10 +1,10 @@
+import { rentalMetadata } from '@/lib/rentalMetadata';
 import React from 'react';
 import { Metadata } from 'next';
 import { HomePageView } from '@/components/HomePageView';
 
 export const metadata: Metadata = {
-  title: 'تأسيس وتركيب إنترنت زين | عروض 5G والألياف البصرية اتصل +201010742430',
-  description: `احصل على أفضل عروض زين لإنترنت 5G والألياف البصرية. تأسيس سريع ومودم مجاني وباقات مميزة في أنحاء المملكة. اتصل بمندوب زين على +201010742430.`,
+  ...rentalMetadata(),
   alternates: {
     canonical: '/',
   }
