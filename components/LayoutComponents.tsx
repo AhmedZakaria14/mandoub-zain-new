@@ -47,7 +47,7 @@ export function Header() {
             <div key={i} className="flex items-center gap-2">
               <Sparkles size={16} />
               <span>الموقع متاح للإيجار</span>
-              <a href={`tel:${displayPhone}`} className="underline pr-2 hover:text-white transition-colors">للاستفسار عن الإيجار: <bdi dir="ltr">+20 10 10742430</bdi></a>
+              <a href={`tel:${displayPhone}`} className="underline pr-2 hover:text-white transition-colors">للاستفسار عن الإيجار: <bdi dir="ltr">0535173600</bdi></a>
             </div>
           ))}
         </motion.div>

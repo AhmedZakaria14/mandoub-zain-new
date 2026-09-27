@@ -5,10 +5,10 @@ let content = fs.readFileSync(file, 'utf8');
 
 const regex = /title:\s*'([^']+)'/g;
 content = content.replace(regex, (match, title) => {
-  if (title.includes('+201010742430') || title.includes('string')) {
+  if (title.includes('0535173600') || title.includes('string')) {
     return match; // Already has it
   }
-  return `title: '${title} اتصل +201010742430'`;
+  return `title: '${title} اتصل 0535173600'`;
 });
 
 fs.writeFileSync(file, content, 'utf8');

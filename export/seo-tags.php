@@ -14,7 +14,7 @@ $page_keywords = isset($meta_keywords) ? htmlspecialchars($meta_keywords) : "إ�
 $page_url = isset($page_url) ? htmlspecialchars($page_url) : "https://zain-fiber-riyadh.com/";
 $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://www.zain5grouter.com/images/zain-representative-rental.webp";
 ?>
-<?php $page_description = "الموقع متاح للإيجار. للاستفسار +20 10 10742430. " . $page_description; ?>
+<?php $page_description = "الموقع متاح للإيجار. للاستفسار 0535173600. " . $page_description; ?>
 <!-- SEO Meta Tags -->
 <title><?php echo $page_title; ?></title>
 <meta name="description" content="<?php echo $page_description; ?>">
@@ -74,7 +74,7 @@ $page_image = isset($page_image) ? htmlspecialchars($page_image) : "https://www.
   "@type": "LocalBusiness",
   "name": "<?php echo $site_name; ?>",
   "image": "https://www.zain5grouter.com/images/zain-representative-rental.webp",
-  "telephone": "+201010742430",
+  "telephone": "0535173600",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Riyadh",

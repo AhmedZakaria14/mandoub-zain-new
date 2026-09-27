@@ -31,7 +31,7 @@ export function HomePageView() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "الموقع متاح للإيجار | زين 5G",
-              "description": "الموقع متاح للإيجار. للاستفسار اتصل على +20 10 10742430",
+              "description": "الموقع متاح للإيجار. للاستفسار اتصل على 0535173600",
               "url": SITE_URL,
               "image": BRAND_IMAGE_URL,
               "publisher": {
