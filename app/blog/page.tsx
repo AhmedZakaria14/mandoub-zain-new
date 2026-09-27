@@ -1,4 +1,4 @@
-import { rentalMetadata } from '@/lib/rentalMetadata';
+import { siteMetadata } from '@/lib/siteMetadata';
 import { blogPosts } from '@/lib/blogPosts';
 import { Header, Footer } from '@/components/LayoutComponents';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  ...rentalMetadata('الموقع متاح للإيجار | المدونة — زين 5G'),
+  ...siteMetadata('المدونة — زين 5G'),
 };
 
 export default function BlogIndexPage() {

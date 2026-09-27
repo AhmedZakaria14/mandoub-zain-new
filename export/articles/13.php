@@ -5,11 +5,11 @@ $meta_description = "تفاصيل وعروض عروض ألياف بصرية فى
 $canonical = "https://zain-fiber-riyadh.com/13";
 
 // Basic SEO Headers that would be inside header.php
-$page_title = "الموقع متاح للإيجار | عروض ألياف بصرية فى النسيم الغربي اتصل 0535173600 | الدليل السعودي";
-$page_description = "الموقع متاح للإيجار. للاستفسار 0535173600. " . $meta_description;
+$page_title = "عروض ألياف بصرية فى النسيم الغربي اتصل 0535173600 | الدليل السعودي";
+$page_description = "للاستفسار عن خدمات زين 0535173600. " . $meta_description;
 $page_keywords = "عروض الياف بصرية النسيم الغربي, فايبر زين النسيم الغربي, تركيب الياف النسيم الغربي, انترنت منزلي النسيم الغربي, 5G زين النسيم الغربي, اشتراك الياف بصرية النسيم الغربي, سعر فايبر زين النسيم الغربي, موظف 5G النسيم الغربي, تغطية زين النسيم الغربي, طريقة الاشتراك في فايبر زين";
 $page_url = $canonical;
-$page_image = "https://www.zain5grouter.com/images/zain-representative-rental.webp";
+$page_image = "https://www.zain5grouter.com/images/zain-services-0535173600.webp";
 $is_blog_post = true;
 
 // Mock include
@@ -78,7 +78,7 @@ $is_blog_post = true;
   <div class="container">
     <article>
       <div class="hero-img">
-        <img src="https://www.zain5grouter.com/images/zain-representative-rental.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
+        <img src="https://www.zain5grouter.com/images/zain-services-0535173600.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
         <div class="number-badge">13</div>
       </div>
       

@@ -5,11 +5,11 @@ $meta_description = "تفاصيل وعروض عروض ألياف بصرية فى
 $canonical = "https://zain-fiber-riyadh.com/18";
 
 // Basic SEO Headers that would be inside header.php
-$page_title = "الموقع متاح للإيجار | عروض ألياف بصرية فى البديعة اتصل 0535173600 | الدليل السعودي";
-$page_description = "الموقع متاح للإيجار. للاستفسار 0535173600. " . $meta_description;
+$page_title = "عروض ألياف بصرية فى البديعة اتصل 0535173600 | الدليل السعودي";
+$page_description = "للاستفسار عن خدمات زين 0535173600. " . $meta_description;
 $page_keywords = "عروض الياف بصرية البديعة, فايبر زين البديعة, تركيب الياف البديعة, انترنت منزلي البديعة, 5G زين البديعة, اشتراك الياف بصرية البديعة, سعر فايبر زين البديعة, موظف 5G البديعة, تغطية زين البديعة, طريقة الاشتراك في فايبر زين";
 $page_url = $canonical;
-$page_image = "https://www.zain5grouter.com/images/zain-representative-rental.webp";
+$page_image = "https://www.zain5grouter.com/images/zain-services-0535173600.webp";
 $is_blog_post = true;
 
 // Mock include
@@ -78,7 +78,7 @@ $is_blog_post = true;
   <div class="container">
     <article>
       <div class="hero-img">
-        <img src="https://www.zain5grouter.com/images/zain-representative-rental.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
+        <img src="https://www.zain5grouter.com/images/zain-services-0535173600.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
         <div class="number-badge">18</div>
       </div>
       

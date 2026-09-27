@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { BRAND_IMAGE_PATH } from '@/lib/config';
 
 const homeImages = [
-  { src: BRAND_IMAGE_PATH, alt: "الموقع متاح للإيجار — للاستفسار 0535173600" },
+  { src: BRAND_IMAGE_PATH, alt: "مندوب زين 5G وألياف بصرية — للاستفسار 0535173600" },
   { src: "/images/slideshow/1_s3knrl.webp", alt: "راوتر زين 5G المنزلي باللون الأبيض مع إنترنت سريع" },
   { src: "/images/slideshow/2_ivbo98.webp", alt: "زين تتصدر سرعة الإنترنت الثابت وتغطية 5G في المملكة" },
   { src: "/images/slideshow/3_d2uvsg.webp", alt: "شبكة زين 5G الأفضل في الرياض بأقوى تغطية وأعلى سرعة" },

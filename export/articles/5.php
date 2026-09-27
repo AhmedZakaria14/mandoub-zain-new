@@ -5,11 +5,11 @@ $meta_description = "تفاصيل وعروض موظف تأسيس وتركيب 5G
 $canonical = "https://zain-fiber-riyadh.com/5";
 
 // Basic SEO Headers that would be inside header.php
-$page_title = "الموقع متاح للإيجار | موظف تأسيس وتركيب 5G زين الرياض اتصل 0535173600 | الدليل السعودي";
-$page_description = "الموقع متاح للإيجار. للاستفسار 0535173600. " . $meta_description;
+$page_title = "موظف تأسيس وتركيب 5G زين الرياض اتصل 0535173600 | الدليل السعودي";
+$page_description = "للاستفسار عن خدمات زين 0535173600. " . $meta_description;
 $page_keywords = "فايبر انترنت زين, طلب توصيل الياف زين, تقديم طلب 5G زين, طلب تغطية 5G, طريقة طلب فايبر زين, الياف زين تغطية, كيف اطلب الياف, طريقة تركيب 5G زين, موظف ألياف بصرية زين, موظف زين الرياض, 5G زين, الياف زين, تركيب الياف, فايبر زين, طلب تأسيس 5G زين, fiber زين, موظف الياف زين, الموظف ألياف بصرية زين, موظف 5G";
 $page_url = $canonical;
-$page_image = "https://www.zain5grouter.com/images/zain-representative-rental.webp";
+$page_image = "https://www.zain5grouter.com/images/zain-services-0535173600.webp";
 $is_blog_post = true;
 
 // Mock include
@@ -78,7 +78,7 @@ $is_blog_post = true;
   <div class="container">
     <article>
       <div class="hero-img">
-        <img src="https://www.zain5grouter.com/images/zain-representative-rental.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
+        <img src="https://www.zain5grouter.com/images/zain-services-0535173600.webp" alt="مندوب مبيعات زين الرياض لتركيب إنترنت 5G وألياف بصرية - <?php echo $article_title; ?>" loading="lazy" width="800" height="450">
         <div class="number-badge">5</div>
       </div>
       

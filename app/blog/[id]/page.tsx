@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: metaTitle,
     description: metaDesc,
     twitter: { card: 'summary_large_image', title: metaTitle, description: metaDesc, images: [postImageUrl] },
-    keywords: ['الموقع متاح للإيجار', 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...(post.metaKeywords || post.title.split(' ').filter(w => w.length > 3))],
+    keywords: ['مندوب زين 5G وألياف بصرية', 'زين السعودية', 'انترنت 5G المنزلي', 'باقات زين', 'ألياف بصرية', 'الألياف زين', 'مندوب مبيعات زين', 'انترنت لا محدود', 'تأسيس مجاني', 'راوتر مجاني', ...(post.metaKeywords || post.title.split(' ').filter(w => w.length > 3))],
     openGraph: {
       title: metaTitle,
       description: metaDesc,

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone, MessageCircle, Sparkles } from 'lucide-react';
+import { Menu, X, Phone, MessageCircle } from 'lucide-react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { PHONE_NUMBER, WHATSAPP_NUMBER, LOGO_IMAGE_PATH } from '@/lib/config';
@@ -36,22 +36,6 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-brand-primary text-brand-secondary overflow-hidden py-2 relative z-[60]">
-        <motion.div
-          initial={{ x: "0%" }}
-          animate={{ x: "-50%" }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-          className="flex whitespace-nowrap gap-12 font-bold text-sm w-max"
-        >
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <Sparkles size={16} />
-              <span>الموقع متاح للإيجار</span>
-              <a href={`tel:${displayPhone}`} className="underline pr-2 hover:text-white transition-colors">للاستفسار عن الإيجار: <bdi dir="ltr">0535173600</bdi></a>
-            </div>
-          ))}
-        </motion.div>
-      </div>
       <header className={`py-4 sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200 text-brand-secondary' : 'bg-white border-b border-gray-100 text-brand-secondary'}`}>
         <div className="container mx-auto px-4 flex justify-between items-center relative min-h-[4rem] md:min-h-[6rem]">
           

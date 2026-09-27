@@ -1,8 +1,8 @@
-import { rentalMetadata } from '@/lib/rentalMetadata';
+import { siteMetadata } from '@/lib/siteMetadata';
 import { Header, Footer } from '@/components/LayoutComponents';
 
 export const metadata = {
-  ...rentalMetadata('الموقع متاح للإيجار | شروط الاستخدام'),
+  ...siteMetadata('شروط الاستخدام'),
 };
 
 export default function TermsOfUse() {

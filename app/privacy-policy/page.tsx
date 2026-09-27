@@ -1,9 +1,9 @@
-import { rentalMetadata } from '@/lib/rentalMetadata';
+import { siteMetadata } from '@/lib/siteMetadata';
 import { Header, Footer } from '@/components/LayoutComponents';
 import { PHONE_NUMBER } from '@/lib/config';
 
 export const metadata = {
-  ...rentalMetadata('الموقع متاح للإيجار | سياسة الخصوصية'),
+  ...siteMetadata('سياسة الخصوصية'),
 };
 
 export default function PrivacyPolicy() {

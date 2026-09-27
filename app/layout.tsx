@@ -1,4 +1,4 @@
-import { rentalMetadata } from '@/lib/rentalMetadata';
+import { siteMetadata } from '@/lib/siteMetadata';
 import type { Metadata, Viewport } from 'next';
 import { Tajawal } from 'next/font/google';
 import './globals.css';
@@ -12,7 +12,7 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  ...rentalMetadata(),
+  ...siteMetadata(),
 };
 
 export const viewport: Viewport = {
