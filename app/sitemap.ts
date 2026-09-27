@@ -3,8 +3,8 @@ import { blogPosts } from '@/lib/blogPosts';
 import { SITE_URL } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Reflect the site-wide phone, SEO, URL and image update.
-  const defaultDate = new Date('2026-09-27T00:00:00Z');
+  // Reflect the site-wide content, metadata and banner update.
+  const defaultDate = new Date('2026-09-27T08:54:12Z');
 
   const blogUrls = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
