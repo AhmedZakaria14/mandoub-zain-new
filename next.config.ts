@@ -26,6 +26,12 @@ const nextConfig: NextConfig = {
   },
   output: 'standalone',
   async redirects() {
+    const redirect301 = (source: string, destination: string) => ({
+      source: source.split("/").map(encodeURIComponent).join("/"),
+      destination,
+      statusCode: 301,
+    });
+
     const legacyMap: [string, string][] = [
       ['/blog/زين-5g-عروض-اتصل-+201010742430-لمعرفة-المزيد-عن-عروض-زين', `/blog/${encodeURIComponent('زين-5g-عروض-اتصل-0535173600-لمعرفة-المزيد-عن-عروض-زين')}`],
       ['/blog/زين-باقات-5g-اسعار-مميزة-وعروض-حصرية-اتصل-الآن-+201010742430', `/blog/${encodeURIComponent('زين-باقات-5g-اسعار-مميزة-وعروض-حصرية-اتصل-الآن-0535173600')}`],
@@ -79,6 +85,20 @@ const nextConfig: NextConfig = {
         destination: '/blog',
         statusCode: 301,
       },
+      redirect301(
+        '/blog/عروض-فايف-جي-زين-اتصل-الآن-+201010742430-واحصل-على-أفضل-سرعة',
+        `/blog/${encodeURIComponent('عروض-فايف-جي-زين-اتصل-الآن-0535173600-واحصل-على-أفضل-سرعة')}`,
+      ),
+      redirect301(
+        '/blog/زين-باقات-5g-اسعار-مميزة-وعروض-حصرية-اتصل-الآن-+201010742430',
+        `/blog/${encodeURIComponent('زين-باقات-5g-اسعار-مميزة-وعروض-حصرية-اتصل-الآن-0535173600')}`,
+      ),
+      redirect301(
+        '/blog/زين-عروض-5g-سرعة-انترنت-عالية-بأقل-الأسعار-+201010742430-اطلب-الخدمة-فورا',
+        `/blog/${encodeURIComponent('زين-عروض-5g-سرعة-انترنت-عالية-بأقل-الأسعار-0535173600-اطلب-الخدمة-فورا')}`,
+      ),
+      redirect301('/contactط', '/contact'),
+      redirect301('/تواصل-معنا.html', '/contact'),
       ...legacyMap.filter(([source, destination]) => decodeURIComponent(source) !== decodeURIComponent(destination)).map(([source, destination]) => ({
         source: source.split("/").map(encodeURIComponent).join("/"),
         destination,
