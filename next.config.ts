@@ -68,11 +68,23 @@ const nextConfig: NextConfig = {
       ['/blog/zain-5g-unlimited', `/blog/${encodeURIComponent('زين-لا-محدود-5G-تجربة-إنترنت-فائقة-السرعة-تلبي-جميع-احتياجاتك-الرقمية-0535173600')}`],
     ];
 
-    return legacyMap.filter(([source, destination]) => decodeURIComponent(source) !== decodeURIComponent(destination)).map(([source, destination]) => ({
-      source: source.split("/").map(encodeURIComponent).join("/"),
-      destination,
-      permanent: true,
-    }));
+    return [
+      {
+        source: '/المدونة',
+        destination: '/blog',
+        statusCode: 301,
+      },
+      {
+        source: '/%D8%A7%D9%84%D9%85%D8%AF%D9%88%D9%86%D8%A9',
+        destination: '/blog',
+        statusCode: 301,
+      },
+      ...legacyMap.filter(([source, destination]) => decodeURIComponent(source) !== decodeURIComponent(destination)).map(([source, destination]) => ({
+        source: source.split("/").map(encodeURIComponent).join("/"),
+        destination,
+        permanent: true,
+      })),
+    ];
   },
   async headers() {
     return [
