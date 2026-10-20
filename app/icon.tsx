@@ -1,6 +1,6 @@
-import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import sharp from 'sharp';
 
 export const runtime = 'nodejs';
 export const alt = 'شعار زين 5G والألياف البصرية';
@@ -8,32 +8,24 @@ export const size = { width: 96, height: 96 };
 export const contentType = 'image/png';
 
 export default async function Icon() {
-  // Reuse the exact logo displayed in the website header.
+  // Convert the exact header logo to a square PNG. Unlike ImageResponse,
+  // sharp supports WebP as a source during Next.js prerendering.
   const logo = await readFile(
     join(process.cwd(), 'public', 'images', 'zain-5g-logo.webp'),
   );
 
-  return new ImageResponse(
-    (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          backgroundColor: '#ffffff',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <img
-          src={`data:image/webp;base64,${logo.toString('base64')}`}
-          alt={alt}
-          width="92"
-          height="92"
-          style={{ objectFit: 'contain' }}
-        />
-      </div>
-    ),
-    { ...size },
-  );
+  const png = await sharp(logo)
+    .resize(size.width, size.height, {
+      fit: 'contain',
+      background: '#ffffff',
+    })
+    .png()
+    .toBuffer();
+
+  return new Response(new Uint8Array(png), {
+    headers: {
+      'Content-Type': contentType,
+      'Cache-Control': 'public, max-age=86400',
+    },
+  });
 }
