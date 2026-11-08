@@ -20,6 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1.0,
     },
+    ...['/blog', '/privacy-policy', '/terms-of-use'].map((path) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified: defaultDate,
+    })),
     ...blogUrls,
   ];
 }
