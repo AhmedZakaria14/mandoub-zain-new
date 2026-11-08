@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const OPERATOR = "زين";
-const PHONE = "0535173600"; // Wait, user wants 0535173600 now! In search_results.txt it was 0535173600.
+const PHONE = "0594006091"; // Wait, user wants 0594006091 now! In search_results.txt it was 0594006091.
 const BRAND = "زين";
 const SITE_NAME = "الدليل السعودي";
 const DOMAIN = "zain5grouter.com";

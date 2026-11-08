@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const newPhone = '0535173600';
-const newWhatsapp = '966535173600';
+const newPhone = '0594006091';
+const newWhatsapp = '966594006091';
 
 const filesToUpdate = [
   'lib/config.ts',
@@ -15,10 +15,10 @@ filesToUpdate.forEach(file => {
   if (fs.existsSync(filePath)) {
     let content = fs.readFileSync(filePath, 'utf8');
     
-    content = content.replace(/0535173600/g, newPhone);
-    content = content.replace(/966535173600/g, newWhatsapp);
-    content = content.replace(/0535173600/g, newPhone);
-    content = content.replace(/966535173600/g, newWhatsapp);
+    content = content.replace(/0594006091/g, newPhone);
+    content = content.replace(/966594006091/g, newWhatsapp);
+    content = content.replace(/0594006091/g, newPhone);
+    content = content.replace(/966594006091/g, newWhatsapp);
     
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`Updated ${file}`);

@@ -4,10 +4,10 @@ let content = fs.readFileSync(file, 'utf8');
 
 const regex = /title:\s*"([^"]+)"/g;
 content = content.replace(regex, (match, title) => {
-  if (title.includes('0535173600')) {
+  if (title.includes('0594006091')) {
     return match;
   }
-  return `title: "${title} اتصل 0535173600"`;
+  return `title: "${title} اتصل 0594006091"`;
 });
 
 fs.writeFileSync(file, content, 'utf8');

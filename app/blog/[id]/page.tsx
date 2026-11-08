@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   const post = matchResult.post;
   const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   const datePublished = "2024-05-01";
-  const dateModified = "2026-08-31";
+  const dateModified = "2026-11-08";
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-gray font-sans text-brand-secondary">
