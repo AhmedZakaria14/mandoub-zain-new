@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { MessageCircle, Phone, ListOrdered, ChevronDown } from 'lucide-react';
-import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, LOGO_IMAGE_URL } from '@/lib/config';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, LOGO_IMAGE_URL, RENTAL_NOTICE } from '@/lib/config';
 import { findBlogPostOrMatch } from '@/lib/blogUtils';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
   const postUrl = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   const postImageUrl = post.imageUrl.startsWith('http') ? post.imageUrl : `${SITE_URL}${post.imageUrl}`;
-  const metaTitle = post.title;
-  const metaDesc = post.metaDescription;
+  const metaTitle = `${RENTAL_NOTICE} | ${post.title}`;
+  const metaDesc = post.metaDescription ? `${RENTAL_NOTICE}. ${post.metaDescription}` : RENTAL_NOTICE;
 
   return {
     title: metaTitle,

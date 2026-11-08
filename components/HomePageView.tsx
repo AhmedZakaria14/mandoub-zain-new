@@ -12,7 +12,7 @@ import Image from 'next/image';
 import { Phone, MessageCircle, Zap, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { RiyalIcon } from 'riyal/react';
 import * as motion from 'framer-motion/client';
-import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, BRAND_IMAGE_URL } from '@/lib/config';
+import { SITE_URL, PHONE_NUMBER, WHATSAPP_NUMBER, BRAND_IMAGE_URL, RENTAL_NOTICE } from '@/lib/config';
 
 
 export function HomePageView() {
@@ -31,7 +31,7 @@ export function HomePageView() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "مندوب زين 5G وألياف بصرية",
-              "description": "للاستفسار عن خدمات زين اتصل على 0594006091",
+              "description": `${RENTAL_NOTICE}. للاستفسار عن خدمات زين اتصل على ${PHONE_NUMBER}.`,
               "url": SITE_URL,
               "image": BRAND_IMAGE_URL,
               "publisher": {
