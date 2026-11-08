@@ -1,6 +1,6 @@
 const https = require('https');
 
-https.get('https://www.zain5grouter.com/images/zain-services-0535173600.webp', (res) => {
+https.get('https://www.zain5grouter.com/images/zain-services-0594006091.webp', (res) => {
   // We can't really parse PNG in plain node easily without a lib.
   // But wait! We can just fetch the CSS of https://sa.zain.com/ar and look for CSS variables.
 });

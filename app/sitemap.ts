@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Reflect the site-wide content, metadata and banner update.
-  const defaultDate = new Date('2026-09-27T08:54:12Z');
+  const defaultDate = new Date('2026-11-08');
 
   const blogUrls = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,

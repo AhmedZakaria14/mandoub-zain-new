@@ -31,7 +31,7 @@ export function HomePageView() {
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "مندوب زين 5G وألياف بصرية",
-              "description": "للاستفسار عن خدمات زين اتصل على 0535173600",
+              "description": "للاستفسار عن خدمات زين اتصل على 0594006091",
               "url": SITE_URL,
               "image": BRAND_IMAGE_URL,
               "publisher": {
