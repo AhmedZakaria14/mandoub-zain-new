@@ -282,12 +282,11 @@ export function HomePageView() {
               </div>
             </motion.div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
               {[
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/zain_fiber_rdqmd6.jpg", alt: "تركيب بوكسات ألياف بصرية لشركة زين فايبر" },
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461698/WhatsApp_Image_2026-04-28_at_2.57.08_PM_z4ytos.jpg", alt: "تأسيس وإنشاء شبكات الألياف البصرية وزين فايبر" },
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_2_ztdosg.jpg", alt: "تمديد كابلات وتجهيز بوكسات الألياف البصرية زين" },
-                { src: "https://res.cloudinary.com/dxvjqrb9l/image/upload/v1777461697/WhatsApp_Image_2026-04-28_at_2.57.08_PM_1_luo5ux.jpg", alt: "مندوب وموظف تركيب الألياف البصرية فايبر من زين" }
+                { src: "https://www.xn-----ctdcm0aqck5plajre8a.com/images/fiber-installations.webp", alt: "تأسيس وإنشاء شبكات الألياف البصرية وزين فايبر" },
+                { src: "https://www.xn-----ctdcm0aqck5plajre8a.com/images/fiber-boxes.webp", alt: "تمديد كابلات وتجهيز بوكسات الألياف البصرية زين" },
+                { src: "https://www.xn-----ctdcm0aqck5plajre8a.com/images/fiber-identification.webp", alt: "مندوب وموظف تركيب الألياف البصرية فايبر من زين" }
               ].map((img, idx) => (
                 <motion.div 
                    initial={{ opacity: 0, scale: 0.95 }}
