@@ -1,4 +1,3 @@
-export const RENTAL_NOTICE = "الموقع متاح للإيجار";
 export const SITE_URL = "https://www.zain5grouter.com";
 export const PHONE_NUMBER = "0594006091";
 export const WHATSAPP_NUMBER = "966594006091";
