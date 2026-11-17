@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { Tajawal } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
-import { RENTAL_NOTICE, SITE_URL } from '@/lib/config';
+import { SITE_URL } from '@/lib/config';
 
 const tajawal = Tajawal({
   subsets: ['arabic'],
@@ -30,9 +30,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="bg-brand-gray text-[#444] font-sans antialiased overflow-x-hidden" suppressHydrationWarning>
-        <aside className="bg-brand-secondary px-4 py-2 text-center text-sm font-bold text-white">
-          {RENTAL_NOTICE}
-        </aside>
         {children}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-L5C6PS768D"
