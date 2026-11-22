@@ -13,12 +13,6 @@ export default function TermsOfUse() {
         <h1 className="text-4xl font-black mb-8 text-brand-secondary border-r-4 border-brand-primary pr-4">شروط الاستخدام</h1>
         
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm space-y-8 text-lg leading-relaxed text-gray-700">
-          <section className="bg-brand-gray/50 p-6 rounded-2xl border-r-4 border-brand-primary">
-            <h2 className="text-2xl font-bold mb-4 text-brand-secondary">إخلاء مسؤولية رسمي</h2>
-            <p className="text-sm md:text-base">
-              هذا الموقع (<span className="font-bold">zain5grouter.com</span>) هو منصة تسويقية ترويجية مستقلة يديرها مندوب تسويق معتمد. نحن لسنا شركة الاتصالات نفسها، ولا نمثلها بشكل حصري، ولسنا جزءاً من هيكلها التنظيمي الرسمي. مهمتنا تنحصر في تسهيل الربط بين العميل والشركة المزودة للخدمة.
-            </p>
-          </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4 text-brand-secondary">1. قبول الشروط</h2>
