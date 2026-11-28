@@ -1,4 +1,5 @@
 import { siteMetadata } from '@/lib/siteMetadata';
+import { SITE_URL } from '@/lib/config';
 import { blogPosts } from '@/lib/blogPosts';
 import { Header, Footer } from '@/components/LayoutComponents';
 import Link from 'next/link';
@@ -7,6 +8,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   ...siteMetadata('المدونة — زين 5G'),
+  alternates: { canonical: `${SITE_URL}/blog` },
 };
 
 export default function BlogIndexPage() {

@@ -1,4 +1,5 @@
 import { blogPosts, BlogPost } from '@/lib/blogPosts';
+import { PHONE_NUMBER } from '@/lib/config';
 
 export function findBlogPostOrMatch(rawInput: string): { post: BlogPost | null; isExact: boolean } {
   if (!rawInput) return { post: null, isExact: false };
@@ -18,10 +19,11 @@ export function findBlogPostOrMatch(rawInput: string): { post: BlogPost | null; 
   const exactId = blogPosts.find(p => String(p.id) === decoded);
   if (exactId) return { post: exactId, isExact: false };
 
-  // 3. Match after replacing any legacy phone numbers with current number (0594006091)
+  // Match legacy contact numbers only when the rest of the slug matches a canonical post.
   const withNewNumber = decoded
-    .replace(/(?:\+?966|0)(?:534768368|537394981|535173600)|\+?201010742430/g, '0594006091')
-    .replace(/\s+/g, '-');
+    .replace(/\s+/g, '-')
+    .replace(/(^|-)(?:(?:\+?966|0)?5\d{8}|\+?201\d{9})(?=-|$)/g,
+      (_match, prefix: string) => `${prefix}${PHONE_NUMBER}`);
   const numberMatch = blogPosts.find(p => p.slug === withNewNumber);
   if (numberMatch) return { post: numberMatch, isExact: false };
 
